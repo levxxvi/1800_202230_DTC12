@@ -1,4 +1,4 @@
-# My Web Application (Add your Title here)
+# Our Web Application
 
 * [General info](#general-info)
 * [Technologies](#technologies)
