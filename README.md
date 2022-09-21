@@ -8,8 +8,9 @@
 
 This browser based web application to ...
 
-* I am Braden and i hope this works
+* I am Braden and I am exited to practice group projects.
 * Hi! I'm Lex! I'm excited to work on this project because I get to apply new things :D
+* Hi. My name is Michelle. I'm excited about this project because we will learn a lot.
 
 ## Technologies
 
