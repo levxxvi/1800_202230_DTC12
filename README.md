@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+* Hi. My name is Michelle. I'm excited about this project because we will learn a lot.
 	
 ## Technologies
 Technologies used for this project:
