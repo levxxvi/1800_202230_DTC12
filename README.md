@@ -9,7 +9,7 @@
 This browser based web application to ...
 
 * I am Braden and i hope this works
-* Hi! I'm Lex! I'm excited to work on this project because I get to apply new things
+* Hi! I'm Lex! I'm excited to work on this project because I get to apply new things :D
 
 ## Technologies
 
@@ -49,4 +49,3 @@ Tips for file naming files and folders:
 
 * use lowercase with no spaces
 * use dashes (not underscore) for word separation
-
