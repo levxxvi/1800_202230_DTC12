@@ -1,21 +1,27 @@
-## My Web Application (Add your Title here)
+# My Web Application (Add your Title here)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
 
 ## General Info
+
 This browser based web application to ...
+* I am Braden and I am exited to practice group projects.
+* Hi! I'm Lex! I'm excited to work on this project because I get to apply new things
 * Hi. My name is Michelle. I'm excited about this project because we will learn a lot.
-	
+
 ## Technologies
+
 Technologies used for this project:
+
 * HTML, CSS
 * JavaScript
-* Bootstrap 
+* Bootstrap
 * ...
-	
+
 ## Content
+
 Content of the project folder:
 
 ```
@@ -40,6 +46,6 @@ Firebase hosting files:
 ```
 
 Tips for file naming files and folders:
+
 * use lowercase with no spaces
 * use dashes (not underscore) for word separation
-
