@@ -65,3 +65,17 @@ hr {
     border-color: #D4A373;
     border-radius: 3px;
 }
+
+.form-control::placeholder {
+    color: #D4A373;
+}
+
+.form-check-input {
+    background-color: #E9EDC9;
+    border-color: #CCD5AE;
+}
+
+.form-check-input:checked {
+    background-color: #CCD5AE;
+    border-color: #E9EDC9;
+}
