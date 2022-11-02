@@ -56,6 +56,7 @@
         }
 
         .cards {
+            width: calc(96% - 8px);
             display: flex;
             align-items: center;
             background-color: #FAEDCD;
@@ -147,8 +148,8 @@
         #add_recipe {
             padding: 0px;
             margin: 5px;
-            margin-left: 100%;
-            float: right;
+            margin-left: calc(98% - 50px);
+            float: left;
             width: 42px;
             height: 42px;
             color: #D4A373;
@@ -210,7 +211,7 @@
 
     <div id="main">
         <div id="search_box">
-            <input type="password" class="form-control" id="search" placeholder="Search for a recipe">
+            <input type="text" class="form-control" id="search" placeholder="Search for a recipe">
             <button id="tags">Tags</button>
 
         </div>
