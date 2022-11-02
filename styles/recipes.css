@@ -105,7 +105,7 @@ hr {
     border: #D4A373 solid 5px;
 }
 
-#add_recipe {
+#add_button {
     padding: 0px;
     margin: 5px;
     margin-left: calc(98% - 50px);
