@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -34,181 +34,11 @@
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/style_recipies.css">
-
-    <style>
-        @font-face {
-            font-family: useFont;
-            src: url(AbrilFatface-Regular.ttf);
-        }
-
-        body {
-            background-color: #FEFAE0;
-            font-family: useFont;
-        }
-
-        #main {
-            float: left;
-            margin-left: 2.5%;
-            margin-right: 2.5%;
-            margin-bottom: 110px;
-        }
-
-        .cards {
-            width: calc(96% - 8px);
-            display: flex;
-            align-items: center;
-            background-color: #FAEDCD;
-            margin: 2%;
-            border: solid #FAEDCD;
-            border-width: 4px;
-            border-radius: 5px;
-            height: 218px;
-            float: left;
-        }
-
-        #top_card {
-            margin-top: 0%;
-        }
-
-
-        .cards img {
-            box-sizing: border-box;
-            float: left;
-            margin: 5px;
-            width: 200px;
-            border-radius: 5px;
-        }
-
-        #text_area {
-            color: #D4A373;
-            text-align: center;
-            float: right;
-            margin-left: 20px;
-            margin-right: 10px;
-            width: calc(100% - 230px);
-            height: 100%;
-        }
-
-        .card_title {
-            overflow: hidden;
-            margin-top: 20px;
-            width: 100%;
-            margin-bottom: 15px;
-            font-weight: 1000;
-            font-size: 2.5rem;
-        }
-
-
-
-        #list_area {
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-        }
-
-        .list_item {
-            float: left;
-            width: fit-content;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-bottom: 11px;
-        }
-
-        .lists {
-            height: 100%;
-            display: inline-block;
-            padding: 0px;
-            margin: 0px;
-            margin-left: 20px;
-            list-style-type: decimal;
-        }
-
-        hr {
-            border: 1px solid #D4A373;
-        }
-
-        #recipe_box {
-            margin-top: 30px;
-            float: left;
-            border-radius: 5px;
-            border: #D4A373 solid 5px;
-            background-color: #D4A373;
-        }
-
-        #search_box {
-            margin-top: 20px;
-            float: left;
-            width: 100%;
-            border-radius: 5px;
-            border: #D4A373 solid 5px;
-        }
-
-        #add_recipe {
-            padding: 0px;
-            margin: 5px;
-            margin-left: calc(98% - 50px);
-            float: left;
-            width: 42px;
-            height: 42px;
-            color: #D4A373;
-            background-color: #FAEDCD;
-            border-color: #D4A373;
-            border-radius: 3px;
-        }
-
-        #search {
-            margin: 5px;
-            float: left;
-            width: 60%;
-            color: #D4A373;
-            background-color: #FAEDCD;
-            border-color: #D4A373;
-            border-radius: 3px;
-        }
-
-        #tags {
-            margin: 5px;
-            float: right;
-            height: 38px;
-            width: 50px;
-            color: #D4A373;
-            background-color: #FAEDCD;
-            border-color: #D4A373;
-            border-radius: 3px;
-        }
-
-        .material-icons.md-48 {
-            font-size: 40px;
-        }
-
-        @media screen and (max-width: 700px) {
-            #title_area {
-                height: 96px;
-            }
-
-            #list_area {
-                height: 94px;
-            }
-
-            .cards img {
-                margin-left: 10px;
-                margin-right: 10px;
-                width: calc(35% - 20px);
-            }
-
-            #text_area {
-                width: calc(75% - 10px);
-
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles/recipes.css">
 </head>
 
 <body>
-
-
+    <nav id="add_recipe"></nav>
     <div id="main">
         <div id="search_box">
             <input type="text" class="form-control" id="search" placeholder="Search for a recipe">
@@ -216,7 +46,8 @@
 
         </div>
         <div id="recipe_box">
-            <button id="add_recipe"><i class="material-icons md-48" id="add">add</i></button>
+            <button id="add_button"><i class="material-icons md-48" id="add">add</i></button>
+
             <div class="cards" id="top_card">
                 <img src="https://picsum.photos/534">
                 <div id="text_area">
@@ -290,6 +121,8 @@
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/add_loader.js"></script>
+
 </body>
 
 </html>
