@@ -1,7 +1,23 @@
 <head>
     <style>
-        div {
+        #spacing {
+            display: block;
+            flex-direction: column;
+            box-sizing: border-box;
+            /* padding-top: 50px; */
+            height: 50px;
+            min-height: 50px;
+            overflow: hidden;
+            color: #fefae0;
+        }
+        /* div {
             padding-bottom: 50px;
+        } */
+
+        @media screen and (max-width: 400px) {
+            #spacing{
+                padding-bottom: 6px;
+            }
         }
     </style>
 </head>
@@ -15,4 +31,5 @@
             <span class="mb-3 mb-md-0 text-muted">1800 Team 12: Michelle Kwok, Braden Rogers, Lex Wong</span>
         </div>
     </footer>
+    <div id="spacing"></div>
 </div>
