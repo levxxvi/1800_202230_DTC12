@@ -1,136 +1,170 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-  
-    <link href='fullcalendar/packages/core/main.css' rel='stylesheet' />
-    <link href='fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
-    
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-    <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
 
-    <title>Calendar</title>
-  </head>
-  <body>
-  
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link href='fullcalendar/packages/core/main.css' rel='stylesheet' />
+  <link href='fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Calendar</title>
+</head>
+
+<body>
+
+  <nav id="footerPlaceholder"></nav>
+
+  <nav id="navbarPlaceholder"></nav>
+
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script src="./scripts/skeleton.js"></script>
 
   <div id='calendar-container'>
     <div id='calendar'></div>
   </div>
-    
-    
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 
-    <script src='fullcalendar/packages/core/main.js'></script>
-    <script src='fullcalendar/packages/interaction/main.js'></script>
-    <script src='fullcalendar/packages/daygrid/main.js'></script>
-    <script src='fullcalendar/packages/timegrid/main.js'></script>
-    <script src='fullcalendar/packages/list/main.js'></script>
 
-    
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+  <script src='fullcalendar/packages/core/main.js'></script>
+  <script src='fullcalendar/packages/interaction/main.js'></script>
+  <script src='fullcalendar/packages/daygrid/main.js'></script>
+  <script src='fullcalendar/packages/timegrid/main.js'></script>
+  <script src='fullcalendar/packages/list/main.js'></script>
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
-      height: 'parent',
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-      },
-      defaultView: 'dayGridMonth',
-      defaultDate: '2022-11-08',
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'BLT sandwich',
-          start: '2022-11-01T12:00:00',
-        },
 
-        {
-          title: 'Ramen',
-          start: '2022-11-01T18:00:00',
-        },
 
-        {
-          title: 'Avocado toast',
-          start: '2022-11-07T12:00:00',
-        },
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
 
-        {
-          title: 'Butter chicken',
-          start: '2022-11-07T18:00:00',
-        },
-        
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2022-11-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2022-11-16T16:00:00'
-        },
-       
-        {
-          title: 'PB jelly sandwich',
-          start: '2022-11-12T10:30:00',
-          end: '2022-11-12T12:30:00'
-        },
-        {
-          title: 'Tomato soup',
-          start: '2022-11-12T12:00:00'
-        },
-        {
-          title: 'Fruits',
-          start: '2022-11-12T14:30:00'
-        },
-        {
-          title: 'Grilled cheese',
-          start: '2022-11-12T17:30:00'
-        },
-        {
-          title: 'Smoothie bowl',
-          start: '2022-11-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2022-11-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2022-11-28'
-        }
-      ]
-    });
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+          height: 'parent',
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+          },
+          defaultView: 'dayGridMonth',
+          navLinks: true, // can click day/week names to navigate views
+          editable: true,
+          eventLimit: true, // allow "more" link when too many events
+          //from FullCalendar addEvent documentation https://codepen.io/pen?editors=0010
+          headerToolbar: {
+            center: 'addEventButton'
+          },
+          customButtons: {
+            addEventButton: {
+              text: 'add event...',
+              click: function () {
+                var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+                var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+                
+                if (!isNaN(date.valueOf())) { // valid?
+                  calendar.addEvent({
+                    title: 'dynamic event',
+                    start: date,
+                    allDay: true
+                  });
+                  alert('Great. Now, update your database...');
+                } else {
+                  alert('Invalid date.');
+                }
+              }
+            }
+          },
+          events: [{
+              title: 'BLT sandwich',
+              start: '2022-11-01T12:00:00',
+            },
+
+            {
+              title: 'Ramen',
+              start: '2022-11-01T18:00:00',
+            },
+
+            {
+              title: 'Avocado toast',
+              start: '2022-11-07T12:00:00',
+            },
+
+            {
+              title: 'Butter chicken',
+              start: '2022-11-07T18:00:00',
+            },
+
+            {
+              groupId: 999,
+              title: 'Repeating Event',
+              start: '2022-11-09T16:00:00'
+            },
+            {
+              groupId: 999,
+              title: 'Repeating Event',
+              start: '2022-11-16T16:00:00'
+            },
+
+            {
+              title: 'PB jelly sandwich',
+              start: '2022-11-12T10:30:00',
+              end: '2022-11-12T12:30:00'
+            },
+            {
+              title: 'Tomato soup',
+              start: '2022-11-12T12:00:00'
+            },
+            {
+              title: 'Fruits',
+              start: '2022-11-12T14:30:00'
+            },
+            {
+              title: 'Grilled cheese',
+              start: '2022-11-12T17:30:00'
+            },
+            {
+              title: 'Smoothie bowl',
+              start: '2022-11-12T20:00:00'
+            },
+            {
+              title: 'Birthday Party',
+              start: '2022-11-13T07:00:00'
+            },
+            {
+              title: 'Click for Google',
+              url: 'http://google.com/',
+              start: '2022-11-28'
+            }
+          ],
+
+      });
 
     calendar.render();
-  });
+    });
+  </script>
 
-    </script>
+  <script src="js/main.js"></script>
+</body>
 
-    <script src="js/main.js"></script>
-  </body>
 </html>
