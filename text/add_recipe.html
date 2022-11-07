@@ -83,7 +83,9 @@
 
             #recipe_name,
             #recipe_details,
-            #recipe_link {
+            #recipe_link,
+            #recipe_tags,
+            #tags_form {
                 margin-top: 4px;
                 margin-left: 10%;
                 width: 80%;
@@ -119,6 +121,18 @@
                 border-radius: 3px;
             }
 
+            #add_tag {
+                margin: 5px;
+                margin-right: 10%;
+                float: right;
+                height: 38px;
+                width: 60px;
+                color: #D4A373;
+                background-color: #FAEDCD;
+                border-color: #D4A373;
+                border-radius: 3px;
+            }
+
             #error {
                 margin: 0px;
                 margin-top: 8px;
@@ -129,7 +143,7 @@
             .require {
                 font-size: smaller;
                 color: gray;
-                opacity: 0.3;
+                opacity: 0.5;
             }
 
             .required {
@@ -137,7 +151,7 @@
                 float: right;
                 margin-right: 10%;
                 color: gray;
-                opacity: 0.3;
+                opacity: 0.5;
             }
 
             .form-control::placeholder {
@@ -231,24 +245,41 @@
                     </div>
                 </div>
                 <br>
+
+
+
                 <div class="form-group">
-                    <label for="recipe_details">Enter the recipe below, &nbsp;<span class="require">*
-                        </span></label>
-                    <textarea class="form-control form-control-sm" id="recipe_details" rows="3"
-                        placeholder="Recipe here." style="max-height: 150px; min-height: 75px;"></textarea>
+                    <label for="recipe_details">Enter the tags below,</label>
+                    <input type="text" class="form-control" id="recipe_tags" placeholder="Tags"
+                        style="float: left; max-width: calc(80% - 80px)">
+                    <button id="add_tag">ADD</button>
                 </div>
+
+                <div class="form-group">
+
+                    <textarea class="form-control form-control-sm" id="tags_form" placeholder="Tags:"
+                        style="max-height: 100px; min-height: 100px;" readonly></textarea>
+                </div>
+
+
+
+
+
                 <br>
                 <div class="form-group">
-                    <label for="recipe_name">Link:</label>
+                    <label for="recipe_name">Link:</label>&nbsp;&nbsp;<span class="require">*</span>
                     <input type="text" class="form-control form-control-sm" id="recipe_link" placeholder="Link here.">
                 </div>
                 <p id="error"></p>
 
+
                 <div id="finish_buttons">
                     <button id="finish_cancel">CANCEL</button>
                     <div class="break-column_list"></div>
-                    <button id="finish_add">ADD</button>
+                    <button id="finish_add">FINISH</button>
                 </div>
+
+
             </div>
 
         </div>
