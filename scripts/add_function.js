@@ -78,8 +78,7 @@ function call_add() {
         if (e == true) {
             tags.push("dinner");
         }
-        db.collection("added_recipes").add({
-            name: a,
+        db.collection("added_recipes").doc(a).set({
             breakfast: b,
             lunch: c,
             snack: d,
