@@ -9,6 +9,10 @@
     font-family: useFont;
 }
 
+#navbarPlaceholder {
+    height: 0px;
+}
+
 body {
     background-color: #FEFAE0;
 }
@@ -27,7 +31,7 @@ body {
 }
 
 #last_meal {
-    margin-bottom: 100px;
+    margin-bottom: 15px;
 }
 
 .list_item {

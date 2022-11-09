@@ -10,10 +10,15 @@ body {
 }
 
 #main {
+    width: 95%;
     float: left;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    margin-bottom: 110px;
+    margin-bottom: 15px;
+}
+
+#add_recipe {
+    height: 0px;
 }
 
 .cards {
@@ -83,7 +88,6 @@ body {
     padding: 0px;
     margin: 0px;
     margin-left: 20px;
-    list-style-type: decimal;
 }
 
 hr {
@@ -91,6 +95,7 @@ hr {
 }
 
 #recipe_box {
+    width: 100%;
     margin-top: 30px;
     float: left;
     border-radius: 5px;
@@ -138,6 +143,22 @@ hr {
     background-color: #FAEDCD;
     border-color: #D4A373;
     border-radius: 3px;
+}
+
+#search_button {
+    padding: 0px;
+    margin: 5px;
+    float: left;
+    height: 38px;
+    width: 40px;
+    color: #D4A373;
+    background-color: #FAEDCD;
+    border-color: #D4A373;
+    border-radius: 3px;
+}
+
+#search_image {
+    font-size: 36px;
 }
 
 .material-icons.md-48 {
