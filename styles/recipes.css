@@ -14,6 +14,11 @@ body {
     float: left;
     margin-left: 2.5%;
     margin-right: 2.5%;
+    margin-bottom: 15px;
+}
+
+#add_recipe {
+    height: 0px;
 }
 
 .cards {
