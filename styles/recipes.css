@@ -15,7 +15,6 @@ body {
     float: left;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    margin-bottom: 15px;
 }
 
 #add_recipe {
@@ -102,6 +101,7 @@ hr {
     border-radius: 5px;
     border: #D4A373 solid 5px;
     background-color: #D4A373;
+    margin-bottom: 10px;
 }
 
 #search_box {
@@ -128,7 +128,7 @@ hr {
 #search {
     margin: 5px;
     float: left;
-    width: 60%;
+    width: calc(100% - 220px);
     color: #D4A373;
     background-color: #FAEDCD;
     border-color: #D4A373;
@@ -139,7 +139,7 @@ hr {
     margin: 5px;
     float: right;
     height: 38px;
-    width: 50px;
+    width: 90px;
     color: #D4A373;
     background-color: #FAEDCD;
     border-color: #D4A373;
@@ -147,15 +147,27 @@ hr {
 }
 
 #search_button {
+    float: right;
     padding: 0px;
     margin: 5px;
-    float: left;
     height: 38px;
-    width: 40px;
+    width: 90px;
     color: #D4A373;
     background-color: #FAEDCD;
     border-color: #D4A373;
     border-radius: 3px;
+}
+
+#search_name {
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#search_tag {
+    float: right;
+    margin-right: 5px;
+    margin-top: 3px;
 }
 
 #search_image {
@@ -163,10 +175,13 @@ hr {
 }
 
 .material-icons.md-48 {
+    float: left;
     font-size: 40px;
 }
 
 @media screen and (max-width: 700px) {
+
+
     #title_area {
         height: 96px;
     }
@@ -184,5 +199,21 @@ hr {
     #text_area {
         width: calc(75% - 10px);
 
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #search {
+        width: calc(100% - 10px);
+    }
+
+    #tags {
+        float: right;
+        margin-right: 15%;
+    }
+
+    #search_button {
+        float: left;
+        margin-left: 15%;
     }
 }

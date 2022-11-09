@@ -36,10 +36,7 @@
     <!-------------------------------------------->
     <link rel="stylesheet" type="text/css" href="styles/recipes.css">
     <style>
-        @font-face {
-            font-family: useFont;
-            src: url(AbrilFatface-Regular.ttf);
-        }
+
     </style>
 </head>
 
@@ -47,9 +44,13 @@
     <nav id="add_recipe"></nav>
     <div id="main">
         <div id="search_box">
+
             <input type="text" class="form-control" id="search" placeholder="Search for a recipe">
-            <button id="search_button"><i class="material-icons md-48" id="search_image">search</i></button>
-            <button id="tags">Tags</button>
+            <button id="tags"><i class="material-icons md-48" id="search_image">search</i><span
+                    id="search_tag">Tags</span></button>
+            <button id="search_button"><i class="material-icons md-48" id="search_image">search</i><span
+                    id="search_name">Name</span></button>
+
 
         </div>
         <div id="recipe_box">
@@ -104,10 +105,12 @@
                 </div>
             </div>
         </div>
+        <nav id="footerPlaceholder"></nav>
+        <nav id="navbarPlaceholder"></nav>
     </div>
-    <nav id="navbarPlaceholder"></nav>
 
-    <nav id="footerPlaceholder"></nav>
+
+
 
 
 
