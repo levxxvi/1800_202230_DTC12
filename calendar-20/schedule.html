@@ -76,10 +76,11 @@
                 var date = new Date(dateStr + 'T00:00:00'); // will be in local time
                 //make more prompts and use selectors. ask which meal and then go to a different selector
                 
-                var mealStr = prompt();
+                var mealStr = prompt('What do you want to eat?');
+                var meal = new String(mealStr)
                 if (!isNaN(date.valueOf())) { // valid?
                   calendar.addEvent({
-                    title: 'dynamic event',
+                    title: meal,
                     start: date,
                     allDay: true
                   });
