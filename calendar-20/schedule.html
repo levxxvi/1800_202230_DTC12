@@ -26,12 +26,6 @@
 </head>
 
 <body>
-
-  <nav id="footerPlaceholder"></nav>
-
-  <nav id="navbarPlaceholder"></nav>
-
-
   <div id='calendar-container'>
     <div id='calendar'></div>
   </div>
@@ -40,7 +34,6 @@
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
-  <script src="../scripts/skeleton.js"></script>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -62,8 +55,8 @@
           plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
           height: 'parent',
           header: {
-            left: 'prev,next today',
-            center: 'title',
+            left: 'prev,next  today',
+            center: 'title addEventButton',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
           },
           defaultView: 'dayGridMonth',
@@ -76,17 +69,18 @@
           },
           customButtons: {
             addEventButton: {
-              text: 'add event...',
+              text: 'Customize Meal',
               click: function () {
                 //allow users to choose date via selector?
                 var dateStr = prompt('Enter a date in YYYY-MM-DD format');
                 var date = new Date(dateStr + 'T00:00:00'); // will be in local time
                 //make more prompts and use selectors. ask which meal and then go to a different selector
                 
-                var mealStr = prompt();
+                var mealStr = prompt('What do you want to eat?');
+                var meal = new String(mealStr)
                 if (!isNaN(date.valueOf())) { // valid?
                   calendar.addEvent({
-                    title: 'dynamic event',
+                    title: meal,
                     start: date,
                     allDay: true
                   });
@@ -102,67 +96,66 @@
               start: '2022-11-01T12:00:00',
             },
 
-            {
-              title: 'Ramen',
-              start: '2022-11-01T18:00:00',
-            },
+        {
+          title: 'Ramen',
+          start: '2022-11-01T18:00:00',
+        },
 
-            {
-              title: 'Avocado toast',
-              start: '2022-11-07T12:00:00',
-            },
+        {
+          title: 'Avocado toast',
+          start: '2022-11-07T12:00:00',
+        },
 
-            {
-              title: 'Butter chicken',
-              start: '2022-11-07T18:00:00',
-            },
+        {
+          title: 'Butter chicken',
+          start: '2022-11-07T18:00:00',
+        },
 
-            {
-              groupId: 999,
-              title: 'Repeating Event',
-              start: '2022-11-09T16:00:00'
-            },
-            {
-              groupId: 999,
-              title: 'Repeating Event',
-              start: '2022-11-16T16:00:00'
-            },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2022-11-09T16:00:00'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2022-11-16T16:00:00'
+        },
 
-            {
-              title: 'PB jelly sandwich',
-              start: '2022-11-12T10:30:00',
-              end: '2022-11-12T12:30:00'
-            },
-            {
-              title: 'Tomato soup',
-              start: '2022-11-12T12:00:00'
-            },
-            {
-              title: 'Fruits',
-              start: '2022-11-12T14:30:00'
-            },
-            {
-              title: 'Grilled cheese',
-              start: '2022-11-12T17:30:00'
-            },
-            {
-              title: 'Smoothie bowl',
-              start: '2022-11-12T20:00:00'
-            },
-            {
-              title: 'Birthday Party',
-              start: '2022-11-13T07:00:00'
-            },
-            {
-              title: 'Click for Google',
-              url: 'http://google.com/',
-              start: '2022-11-28'
-            }
-          ],
-
+        {
+          title: 'PB jelly sandwich',
+          start: '2022-11-12T10:30:00',
+          end: '2022-11-12T12:30:00'
+        },
+        {
+          title: 'Tomato soup',
+          start: '2022-11-12T12:00:00'
+        },
+        {
+          title: 'Fruits',
+          start: '2022-11-12T14:30:00'
+        },
+        {
+          title: 'Grilled cheese',
+          start: '2022-11-12T17:30:00'
+        },
+        {
+          title: 'Smoothie bowl',
+          start: '2022-11-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2022-11-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2022-11-28'
+        }
+        ]
       });
 
-    calendar.render();
+      calendar.render();
     });
   </script>
 
