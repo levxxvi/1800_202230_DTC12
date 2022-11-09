@@ -41,11 +41,22 @@
     <style>
         body {
             /* Image by <a href="https://www.freepik.com/free-photo/flat-lay-decoration-with-pumpkins-stucco-background_5607388.htm#query=thanksgiving&position=4&from_view=search&track=sph">Freepik</a> */
-            background-image: url('images/flat-lay-decoration-with-pumpkins-stucco-background.jpg');
+            background-image: url('images/top-view-delicious-thanksgiving-meal.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             background-color: gray;
+            background-position: center;
+        }
+
+        @media screen and (max-width: 400px) {
+            body {
+                background-size: cover;
+            }
+        }
+
+        footer > div > span {
+            -webkit-text-stroke: 1px white;
         }
     </style>
 
@@ -59,15 +70,18 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container">
-        <h1 style="margin-top: 5px; color: #fefae0;">Let's Login!</h1>
+        <h1 style="margin-top: 5px; color: #fefae0; -webkit-text-stroke: 1.5px; -webkit-text-stroke-color: #d4a373;">Let's
+            Login!</h1>
     </div>
     <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
 
-    <div style="height: 65px; background-color: rgba(255, 255, 255, .5);">
-        <nav id="footerPlaceholder"></nav>
-    </div>
-    
+    <!-- <div style="height: 65px; background-color: rgba(255, 255, 255, .5);">
+
+    </div> -->
+
+    <nav id="footerPlaceholder"></nav>
+
     <nav id="navbarPlaceholder"></nav>
 
     <!---------------------------------------------->
