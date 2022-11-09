@@ -26,12 +26,6 @@
 </head>
 
 <body>
-
-  <nav id="footerPlaceholder"></nav>
-
-  <nav id="navbarPlaceholder"></nav>
-
-
   <div id='calendar-container'>
     <div id='calendar'></div>
   </div>
@@ -40,7 +34,6 @@
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
-  <script src="../scripts/skeleton.js"></script>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -62,8 +55,8 @@
           plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
           height: 'parent',
           header: {
-            left: 'prev,next today',
-            center: 'title',
+            left: 'prev,next  today',
+            center: 'title addEventButton',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
           },
           defaultView: 'dayGridMonth',
@@ -76,7 +69,7 @@
           },
           customButtons: {
             addEventButton: {
-              text: 'add event...',
+              text: 'Customize Meal',
               click: function () {
                 //allow users to choose date via selector?
                 var dateStr = prompt('Enter a date in YYYY-MM-DD format');
