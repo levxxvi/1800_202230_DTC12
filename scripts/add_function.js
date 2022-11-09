@@ -70,19 +70,19 @@ function call_add() {
         jQuery("#error").html("Error: one or more required fields is missing")
     } else {
         if (b == true) {
-            tags.push("breakfast");
+            tags.push("Breakfast");
         }
         if (c == true) {
-            tags.push("lunch");
+            tags.push("Lunch");
         }
         if (d == true) {
-            tags.push("snack");
+            tags.push("Snack");
         }
-
         if (e == true) {
-            tags.push("dinner");
+            tags.push("Dinner");
         }
         db.collection("added_recipes").doc(a).set({
+            name: a,
             breakfast: b,
             lunch: c,
             snack: d,
