@@ -1,19 +1,23 @@
 const tags = [];
 function adder_tag() {
     let z = jQuery("#recipe_tags").val();
-    tags.push(z);
-    $("#tags_form").append(z + "\n");
-    console.log(tags)
-    $("#recipe_tags").val('');
+    if (z != "") {
+        tags.push(z);
+        $("#tags_form").append(z + "\n");
+        console.log(tags)
+        $("#recipe_tags").val('');
+    }
 }
 
 const ingred = [];
 function adder_ing() {
     let x = jQuery("#recipe_ingred").val();
-    ingred.push(z);
-    $("#ingred_form").append(z + "\n");
-    console.log(ingred)
-    $("#recipe_ingred").val('');
+    if (x != "") {
+        ingred.push(x);
+        $("#ingred_form").append(x + "\n");
+        console.log(ingred)
+        $("#recipe_ingred").val('');
+    }
 }
 
 function call_cancel() {
@@ -27,7 +31,7 @@ function call_add() {
     let b = jQuery("#breakfast:checked").val();
 
     let details = jQuery("#details_form").val();
-    console.log(b)
+
     if (b == "breakfast") {
         b = true
 
@@ -88,16 +92,18 @@ function call_add() {
             description: details,
             link: f,
         })
+        console.log(a, b, c, d, e, f, details, ingred, tags)
+        setTimeout(reload, 500)
     }
-    console.log(a, b, c, d, e, f, tags)
 }
 
 function reload() {
-    location.reload();
+    location.reload()
 }
 
 
 setup = function () {
+    $("#main_adder").scrollTop(0, 0)
     jQuery("#finish_cancel").click(call_cancel);
     jQuery("#finish_add").click(call_add);
     jQuery("#add_tag").click(adder_tag);
