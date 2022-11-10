@@ -1,23 +1,43 @@
 
 function cardSkeleton() {
-    $("#get_title_1").html("test1")
-    let test1 = [1, 2, 3, 4, 5, 6]
-    let l1 = test1.length
-    for (let i = 0; i < l1; i++) {
-        $('#card_list_1').append('<li class="list_item">' + test1[i] + '</li>');
-    }
-    $("#get_title_2").html("test2")
-    let test2 = [1, 2, 3, 4, 5, 6]
-    let l2 = test2.length
-    for (let i = 0; i < l2; i++) {
-        $('#card_list_2').append('<li class="list_item">' + test2[i] + '</li>');
-    }
-    $("#get_title_3").html("test3")
-    let test3 = [1, 2, 3, 4, 5, 6]
-    let l3 = test3.length
-    for (let i = 0; i < l3; i++) {
-        $('#card_list_3').append('<li class="list_item">' + test3[i] + '</li>');
-    }
+    let photonum = 111
+    let card_num = 0
+    db.collection("added_recipes")
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                card_num += 1
+                $("#recipe_box").append(`
+<div class="cards" id="top_card">
+                <img src="https://picsum.photos/${photonum}">
+                <div id="text_area">
+                    <div id="title_area">
+                        <h1 class="card_title" id="get_title_3">
+                            ${doc.data().name}
+                        </h1>
+                        <hr>
+                    </div>
+                    <div id="list_area">
+                        <ul class="lists" id="card_list_${card_num}">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                `
+                )
+                photonum += 1
+                let list = doc.data().tag
+                let list_len = list.length
+                for (let i = 0; i < list_len; i++) {
+                    $(`#card_list_${card_num}`).append('<li class="list_item">' + list[i] + '</li>');
+                }
+
+            });
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
 
 }
 cardSkeleton();  //invoke the function
