@@ -1,6 +1,7 @@
 const tags = [];
 function adder_tag() {
     let z = jQuery("#recipe_tags").val();
+    z = z.toLowerCase();
     if (z != "") {
         tags.push(z);
         $("#tags_form").append(z + "\n");
@@ -12,6 +13,7 @@ function adder_tag() {
 const ingred = [];
 function adder_ing() {
     let x = jQuery("#recipe_ingred").val();
+    x = x.toLowerCase();
     if (x != "") {
         ingred.push(x);
         $("#ingred_form").append(x + "\n");
@@ -27,6 +29,7 @@ function call_cancel() {
 function call_add() {
 
     let a = jQuery("#recipe_name").val();
+    a = a.toLowerCase()
 
     let b = jQuery("#breakfast:checked").val();
 
@@ -70,16 +73,16 @@ function call_add() {
         jQuery("#error").html("Error: one or more required fields is missing")
     } else {
         if (b == true) {
-            tags.push("Breakfast");
+            tags.push("breakfast");
         }
         if (c == true) {
-            tags.push("Lunch");
+            tags.push("lunch");
         }
         if (d == true) {
-            tags.push("Snack");
+            tags.push("snack");
         }
         if (e == true) {
-            tags.push("Dinner");
+            tags.push("dinner");
         }
         db.collection("added_recipes").doc(a).set({
             name: a,
@@ -100,6 +103,7 @@ function call_add() {
 function reload() {
     location.reload()
 }
+
 
 
 setup = function () {
