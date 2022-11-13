@@ -86,8 +86,6 @@
             #recipe_name,
             #recipe_link,
             #recipe_tags,
-            #tags_form,
-            #ingred_form,
             #recipe_ingred,
             #details_form {
                 margin-top: 4px;
@@ -95,6 +93,19 @@
                 width: 80%;
                 color: #D4A373;
                 background-color: #FAEDCD;
+            }
+
+            #tags_form,
+            #ingred_form {
+                overflow-y: scroll;
+                height: 100px;
+                margin-top: 46px;
+                margin-left: 10%;
+                width: 80%;
+                color: #D4A373;
+                background-color: #FAEDCD;
+                border: #D4A373 2px;
+                border-radius: 5px;
             }
 
             #finish_add {
@@ -188,6 +199,22 @@
                 font-family: useFont;
             }
 
+            #tag_list,
+            #ingred_list {
+                list-style: none;
+                padding-left: 0px;
+            }
+
+            .remove_ing,
+            .remove_tag {
+                margin-top: 5px;
+                color: #D4A373;
+                background-color: #FAEDCD;
+                border-color: #D4A373;
+                border-radius: 3px;
+            }
+
+
             @media screen and (max-width: 600px) {
                 #finish_cancel {
                     margin-right: 5%;
@@ -275,9 +302,10 @@
                     <button id="add_tag">ADD</button>
                 </div>
 
-                <div class="form-group">
-                    <textarea class="form-control form-control-sm" id="tags_form" placeholder="Tags:"
-                        style="max-height: 100px; min-height: 100px;" readonly></textarea>
+                <div id="tags_form">
+                    <ul id="tag_list">
+
+                    </ul>
                 </div>
 
 
@@ -289,9 +317,10 @@
                     <button id="add_ing">ADD</button>
                 </div>
 
-                <div class="form-group">
-                    <textarea class="form-control form-control-sm" id="ingred_form" placeholder="Ingredients:"
-                        style="max-height: 100px; min-height: 100px;" readonly></textarea>
+                <div id="ingred_form">
+                    <ul id="ingred_list">
+
+                    </ul>
                 </div>
 
 

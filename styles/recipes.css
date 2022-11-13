@@ -135,7 +135,7 @@ hr {
     border-radius: 3px;
 }
 
-#tags {
+#search_tags {
     margin: 5px;
     float: right;
     height: 38px;
@@ -146,7 +146,7 @@ hr {
     border-radius: 3px;
 }
 
-#search_button {
+#search_names {
     float: right;
     padding: 0px;
     margin: 5px;
