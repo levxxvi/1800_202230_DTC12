@@ -1,0 +1,32 @@
+body {
+    background-color: #FEFAE0;
+}
+
+h1 {
+    padding: 1em;
+}
+
+.days-table {
+    text-align: center;
+}
+
+td {
+    width: 150px;
+    text-align: center;
+    background-color: #CCD5AE;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.textbox {
+    float: right;
+    width: 70%;
+}
+
+table {
+    width: 100%;
+}
