@@ -30,3 +30,17 @@ h2 {
 table {
     width: 100%;
 }
+
+.border {
+    border-color: #D4A373;
+}
+
+.card {
+  flex-direction: row;
+  align-items: center;
+  background-color: #FEFAE0;
+}
+
+.card img {
+  width: 300px;
+}
