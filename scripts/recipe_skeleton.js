@@ -7,7 +7,7 @@ function cardSkeleton() {
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 card_num += 1
-                $("#recipe_box").append(`
+                $("#search_cards").append(`
 <div class="cards" id="top_card">
                 <img src="https://picsum.photos/${photonum}">
                 <div id="text_area">

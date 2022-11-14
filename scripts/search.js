@@ -1,5 +1,5 @@
 function name_search() {
-    $("#recipe_box").html("")
+    $("#search_cards").html("")
     let photonum = 111
     let card_num = 0
     let y = jQuery("#search").val();
@@ -9,7 +9,7 @@ function name_search() {
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 card_num += 1
-                $("#recipe_box").append(`
+                $("#search_cards").append(`
     <div class="cards" id="top_card">
                     <img src="https://picsum.photos/${photonum}">
                     <div id="text_area">
@@ -44,7 +44,7 @@ function name_search() {
 }
 
 function tag_search() {
-    $("#recipe_box").html("")
+    $("#search_cards").html("")
     let photonum = 111
     let card_num = 0
     let z = jQuery("#search").val();
@@ -54,7 +54,7 @@ function tag_search() {
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 card_num += 1
-                $("#recipe_box").append(`
+                $("#search_cards").append(`
     <div class="cards" id="top_card">
                     <img src="https://picsum.photos/${photonum}">
                     <div id="text_area">
