@@ -30,7 +30,7 @@ body {
     border: solid #FAEDCD;
     border-width: 4px;
     border-radius: 5px;
-    height: 218px;
+    height: 222px;
     float: left;
 }
 
@@ -181,15 +181,6 @@ hr {
 
 @media screen and (max-width: 700px) {
 
-
-    #title_area {
-        height: 96px;
-    }
-
-    #list_area {
-        height: 94px;
-    }
-
     .cards img {
         margin-left: 10px;
         margin-right: 10px;
@@ -202,17 +193,33 @@ hr {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .card_title {
+        margin-bottom: 0px;
+        margin-top: 5px;
+    }
+
+    hr {
+        margin: 0px;
+        margin-bottom: 5px;
+    }
+
+    #title_area {
+        height: fit-content;
+    }
+}
+
 @media screen and (max-width: 450px) {
     #search {
         width: calc(100% - 10px);
     }
 
-    #tags {
+    #search_tags {
         float: right;
         margin-right: 15%;
     }
 
-    #search_button {
+    #search_names {
         float: left;
         margin-left: 15%;
     }
