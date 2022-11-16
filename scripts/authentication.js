@@ -25,9 +25,13 @@ var uiConfig = {
           .catch(function (error) {
             console.log("Error adding new user: " + error);
           });
-        db.collection("user").doc(user.uid).collection(user.uid+"Recipes");
-        db.collection("user").doc(user.uid).collection(user.uid+"Schedule");
-
+        db.collection("users").doc(user.uid).collection(user.displayName+"Recipes").doc("New Recipes Test").set({
+          name: "Chicken and Fries"
+        });
+        db.collection("users").doc(user.uid).collection(user.displayName+"Schedule").doc("New Schedule Test").set({
+          date: "11/16/2022",
+          meal: "Chicken and Fries",
+        });
       } else {
         return true;
       }
