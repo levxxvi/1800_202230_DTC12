@@ -67,28 +67,32 @@ body {
 }
 
 .card_title {
-    overflow: hidden;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-weight: 1000;
     font-size: 2.5rem;
+}
+
+#title_area {
+    height: fit-content;
 }
 
 
 
 #list_area {
+    margin-top: 20px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
+    height: 60px;
 }
 
 .list_item {
+    overflow: hidden;
     float: left;
     width: fit-content;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 11px;
+    margin-bottom: 10px;
 }
 
 .lists {
@@ -201,11 +205,9 @@ hr {
         width: calc(75% - 10px);
 
     }
-}
 
-@media screen and (max-width: 600px) {
     .card_title {
-        margin-bottom: 0px;
+        margin-bottom: 5px;
         margin-top: 5px;
     }
 
@@ -217,11 +219,29 @@ hr {
     #title_area {
         height: fit-content;
     }
+
+    #list_area {
+        overflow: hidden;
+        height: 60px;
+    }
 }
 
 @media screen and (max-width: 450px) {
     #search {
         width: calc(100% - 10px);
+    }
+
+    #list_area {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    #title_area {
+        height: 100%;
+    }
+
+    .card_title {
+        margin-top: 20px;
     }
 
     #search_tags {

@@ -1,4 +1,6 @@
 const tags = [];
+const doc_name = "";
+
 function adder_tag() {
     let tag = tags.length
     let z = jQuery("#recipe_tags").val();
@@ -87,14 +89,25 @@ function call_add() {
         if (e == true) {
             tags.push("dinner");
         }
-        db.collection("added_recipes").doc(a).set({
+
+        len = tags.length;
+        for (i = 0; i < len; i++)
+            if (tags[i] != undefined) { tags.push(tags[i]); }
+        tags.splice(0, len);
+
+        len = ingred.length;
+        for (i = 0; i < len; i++)
+            if (ingred[i] != undefined) { ingred.push(ingred[i]); }
+        ingred.splice(0, len);
+
+        db.collection("added_recipes").doc(doc_name).set({
             name: a,
             breakfast: b,
             lunch: c,
             snack: d,
             dinner: e,
-            tag: tags,
-            ingredients: ingred,
+            tag: send_tags,
+            ingredients: send_ing,
             description: details,
             link: f,
         })
@@ -147,10 +160,11 @@ function pop_info() {
 
         for (let i = 0; i < doc_ing.length; i++) {
             ingred.push(doc_ing[i]);
-            $("#ingred_list").append(`<li class="list_item"> <button id = "${ingred.length - 1}" class = "remove_tag"> ${doc_ing[i]} </button> </li>`);
+            $("#ingred_list").append(`<li class="list_item"> <button id = "${ingred.length - 1}" class = "remove_ing"> ${doc_ing[i]} </button> </li>`);
         }
 
         jQuery("#recipe_name").val(rec_info.data().name);
+        doc_name = rec_info.data().name
         jQuery("#details_form").val(rec_info.data().description);
         jQuery("#recipe_link").val(rec_info.data().link);
     })

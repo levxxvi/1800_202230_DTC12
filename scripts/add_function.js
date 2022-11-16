@@ -88,6 +88,17 @@ function call_add() {
         if (e == true) {
             tags.push("dinner");
         }
+
+        len = tags.length;
+        for (i = 0; i < len; i++)
+            if (tags[i] != undefined) { tags.push(tags[i]); }
+        tags.splice(0, len);
+
+        len = ingred.length;
+        for (i = 0; i < len; i++)
+            if (ingred[i] != undefined) { ingred.push(ingred[i]); }
+        ingred.splice(0, len);
+
         db.collection("added_recipes").doc(a).set({
             name: a,
             breakfast: b,
@@ -110,14 +121,14 @@ function reload() {
 
 function delete_function_tag() {
     tag = jQuery(this).attr('id')
-    tags.splice(tag, 1);
+    delete tags[tag];
     console.log(tags)
     jQuery(this).parent().remove()
 }
 
 function delete_function_ing() {
     ing = jQuery(this).attr('id')
-    ingred.splice(ing, 1);
+    delete ingred[ing];
     console.log(ingred)
     jQuery(this).parent().remove()
 }

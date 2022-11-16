@@ -16,8 +16,9 @@ function cardSkeleton() {
                         <h1 class="card_title" id="get_title_3">
                             ${doc.data().name}
                         </h1>
-                        <hr>
+                        
                     </div>
+                    <hr>
                     <div id="list_area">
                         <ul class="lists" id="card_list_${card_num}">
 
