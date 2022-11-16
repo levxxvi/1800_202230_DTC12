@@ -12,8 +12,6 @@ var uiConfig = {
       //
       // If the user is a "brand new" user, then create a new "user" in your own database.
       // Assign this user with the name and email provided.
-      // Before this works, you must enable "Firestore" from the firebase console.
-      // The Firestore rules must allow the user to write. 
       //------------------------------------------------------------------------------------------
       var user = authResult.user; // get the user object from the Firebase authentication database
       if (authResult.additionalUserInfo.isNewUser) { //if new user
@@ -27,7 +25,13 @@ var uiConfig = {
           .catch(function (error) {
             console.log("Error adding new user: " + error);
           });
-        var userRef = db.collection(user.displayName + "_recipes");
+        db.collection("users").doc(user.uid).collection(user.displayName+"Recipes").doc("New Recipes Test").set({
+          name: "Chicken and Fries"
+        });
+        db.collection("users").doc(user.uid).collection(user.displayName+"Schedule").doc("New Schedule Test").set({
+          date: "11/16/2022",
+          meal: "Chicken and Fries",
+        });
       } else {
         return true;
       }
@@ -41,7 +45,7 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: 'home.html',
+  signInSuccessUrl: 'HTML/home copy.html',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
