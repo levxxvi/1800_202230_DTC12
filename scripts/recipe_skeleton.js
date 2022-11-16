@@ -8,6 +8,7 @@ function cardSkeleton() {
             querySnapshot.forEach((doc) => {
                 card_num += 1
                 $("#search_cards").append(`
+                <button class = "recipe_card" id = "${doc.data().name}">
 <div class="cards" id="top_card">
                 <img src="https://picsum.photos/${photonum}">
                 <div id="text_area">
@@ -24,6 +25,7 @@ function cardSkeleton() {
                     </div>
                 </div>
             </div>
+            </button>
                 `
                 )
                 photonum += 1
