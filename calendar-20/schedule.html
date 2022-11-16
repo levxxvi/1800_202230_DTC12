@@ -38,12 +38,12 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-
   <script src='fullcalendar/packages/core/main.js'></script>
   <script src='fullcalendar/packages/interaction/main.js'></script>
   <script src='fullcalendar/packages/daygrid/main.js'></script>
   <script src='fullcalendar/packages/timegrid/main.js'></script>
   <script src='fullcalendar/packages/list/main.js'></script>
+  <script src="scripts/add_schedule.js"></script>
 
 
 
@@ -52,49 +52,49 @@
       var calendarEl = document.getElementById('calendar');
 
       var calendar = new FullCalendar.Calendar(calendarEl, {
-          plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
-          height: 'parent',
-          header: {
-            left: 'prev,next  today',
-            center: 'title addEventButton',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-          },
-          defaultView: 'dayGridMonth',
-          navLinks: true, // can click day/week names to navigate views
-          editable: true,
-          eventLimit: true, // allow "more" link when too many events
-          //from FullCalendar addEvent documentation https://codepen.io/pen?editors=0010
-          headerToolbar: {
-            center: 'addEventButton'
-          },
-          customButtons: {
-            addEventButton: {
-              text: 'Customize Meal',
-              click: function () {
-                //allow users to choose date via selector?
-                var dateStr = prompt('Enter a date in YYYY-MM-DD format');
-                var date = new Date(dateStr + 'T00:00:00'); // will be in local time
-                //make more prompts and use selectors. ask which meal and then go to a different selector
-                
-                var mealStr = prompt('What do you want to eat?');
-                var meal = new String(mealStr)
-                if (!isNaN(date.valueOf())) { // valid?
-                  calendar.addEvent({
-                    title: meal,
-                    start: date,
-                    allDay: true
-                  });
-                  alert('Great. Now, update your database...');
-                } else {
-                  alert('Invalid date.');
-                }
+        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+        height: 'parent',
+        header: {
+          left: 'prev,next  today',
+          center: 'title addEventButton',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+        },
+        defaultView: 'dayGridMonth',
+        navLinks: true, // can click day/week names to navigate views
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        //from FullCalendar addEvent documentation https://codepen.io/pen?editors=0010
+        headerToolbar: {
+          center: 'addEventButton'
+        },
+        customButtons: {
+          addEventButton: {
+            text: 'Customize Meal',
+            click: function () {
+              //allow users to choose date via selector?
+              var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+              var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+              //make more prompts and use selectors. ask which meal and then go to a different selector
+
+              var mealStr = prompt('What do you want to eat?');
+              var meal = new String(mealStr)
+              if (!isNaN(date.valueOf())) { // valid?
+                calendar.addEvent({
+                  title: meal,
+                  start: date,
+                  allDay: true
+                });
+                alert('Great. Now, update your database...');
+              } else {
+                alert('Invalid date.');
               }
             }
-          },
-          events: [{
-              title: 'BLT sandwich',
-              start: '2022-11-01T12:00:00',
-            },
+          }
+        },
+        events: [{
+          title: 'BLT sandwich',
+          start: '2022-11-01T12:00:00',
+        },
 
         {
           title: 'Ramen',
