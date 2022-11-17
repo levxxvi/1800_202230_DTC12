@@ -111,7 +111,7 @@ function call_add() {
             link: f,
         })
         console.log(a, b, c, d, e, f, details, ingred, tags)
-        setTimeout(reload, 500)
+        // setTimeout(reload, 500)
     }
 }
 

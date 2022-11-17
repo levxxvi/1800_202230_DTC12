@@ -94,6 +94,10 @@
                 background-color: #FAEDCD;
             }
 
+            #recipe_name {
+                color: gray;
+            }
+
             #tags_form,
             #ingred_form {
                 overflow-y: scroll;
@@ -259,8 +263,8 @@
             <div id="main_adder" class="fixed-top">
                 <p><span class="required">* required fields</span></p>
                 <div class="form-group">
-                    <label for="recipe_name">Enter the recipe's name: &nbsp;&nbsp;<span class="require">*</span></label>
-                    <input type="text" class="form-control" id="recipe_name" placeholder="Recipe Name">
+                    <label for="recipe_name">Recipe name:</label>
+                    <input type="text" class="form-control" id="recipe_name" placeholder="Recipe Name" readonly>
                 </div>
                 <br>
 
