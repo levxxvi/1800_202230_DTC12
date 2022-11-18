@@ -43,11 +43,6 @@ body {
     margin: 2%;
 }
 
-#top_card {
-    margin-top: 0%;
-}
-
-
 .cards img {
     box-sizing: border-box;
     float: left;
@@ -67,9 +62,7 @@ body {
 }
 
 .card_title {
-    margin-top: 10px;
-    width: 100%;
-    margin-bottom: 5px;
+    margin-top: 5px;
     font-weight: 1000;
     font-size: 2.5rem;
 }
@@ -78,20 +71,20 @@ body {
     height: fit-content;
 }
 
-
-
 #list_area {
-    margin-top: 20px;
     overflow: hidden;
-    height: 60px;
+    height: fit-content;
+    max-height: 80px;
 }
 
 .list_item {
+    font-weight: 5000;
+    font-size: 1.25rem;
     overflow: hidden;
     float: left;
     width: fit-content;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
     margin-bottom: 10px;
 }
 
@@ -193,37 +186,25 @@ hr {
 }
 
 
-@media screen and (max-width: 700px) {
-
-    .cards img {
+@media screen and (max-width: 600px) {
+    #text_area {
+        height: fit-content;
+        width: calc(100% - 20px);
         margin-left: 10px;
         margin-right: 10px;
-        width: calc(35% - 20px);
     }
 
-    #text_area {
-        width: calc(75% - 10px);
-
+    .cards img {
+        width: calc(100% - 10px);
+        float: right;
     }
 
-    .card_title {
-        margin-bottom: 5px;
-        margin-top: 5px;
-    }
-
-    hr {
-        margin: 0px;
-        margin-bottom: 5px;
-    }
-
-    #title_area {
+    .cards {
         height: fit-content;
+        display: inline;
     }
 
-    #list_area {
-        overflow: hidden;
-        height: 60px;
-    }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -231,18 +212,6 @@ hr {
         width: calc(100% - 10px);
     }
 
-    #list_area {
-        visibility: hidden;
-        height: 0px;
-    }
-
-    #title_area {
-        height: 100%;
-    }
-
-    .card_title {
-        margin-top: 20px;
-    }
 
     #search_tags {
         float: right;
