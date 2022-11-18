@@ -8,10 +8,8 @@ function adder_tag() {
     if (z != "") {
         tags.push(z);
         $("#tag_list").append(`<li class="list_item"> <button id = "${tag}" class = "remove_tag"> ${z} </button> </li>`);
-        console.log(tags)
         $("#recipe_tags").val('');
     }
-    console.log(tag)
 }
 
 const ingred = [];
@@ -22,7 +20,6 @@ function adder_ing() {
     if (x != "") {
         ingred.push(x);
         $("#ingred_list").append(`<li class="list_item"> <button id = "${ing}" class = "remove_ing"> ${x} </button> </li>`);
-        console.log(ingred)
         $("#recipe_ingred").val('');
     }
 }
@@ -70,8 +67,7 @@ function call_add() {
 
     let f = jQuery("#recipe_link").val();
 
-    if (a == "" || (b != true && c != true && d != true && e != true) || (f == "")) {
-        console.log("invalid entry")
+    if ((b != true && c != true && d != true && e != true) || (f == "")) {
         jQuery("#error").html("Error: one or more required fields is missing")
     } else {
         if (b == true) {
@@ -98,6 +94,7 @@ function call_add() {
         ingred.splice(0, len);
 
         db.collection("added_recipes").doc(doc_name).set({
+            name: doc_name,
             breakfast: b,
             lunch: c,
             snack: d,
@@ -107,7 +104,6 @@ function call_add() {
             description: details,
             link: f,
         })
-        console.log(a, b, c, d, e, f, details, ingred, tags)
         setTimeout(reload, 500)
     }
 }
@@ -115,14 +111,12 @@ function call_add() {
 function delete_function_tag() {
     tag = jQuery(this).attr('id')
     delete tags[tag];
-    console.log(tags)
     jQuery(this).parent().remove()
 }
 
 function delete_function_ing() {
     ing = jQuery(this).attr('id')
     delete ingred[ing];
-    console.log(ingred)
     jQuery(this).parent().remove()
 }
 
@@ -147,7 +141,6 @@ function pop_info() {
         }
 
         for (let i = 0; i < doc_tags.length; i++) {
-            console.log(doc_tags[i])
             if (doc_tags[i] != "brea" && doc_tags[i] != "lunch" && doc_tags[i] != "snack" && doc_tags[i] != "dinner") {
                 tags.push(doc_tags[i]);
                 $("#tag_list").append(`<li class="list_item"> <button id = "${tags.length - 1}" class = "remove_tag"> ${doc_tags[i]} </button> </li>`);
@@ -173,6 +166,30 @@ function reload() {
     location.reload()
 }
 
+function bring_confirm() {
+    let check = $("#delete_first").html();
+    console.log(check)
+    if (check == "DELETE") {
+        $("#delete_confirm").css("pointer-events", "auto")
+        $("#delete_confirm").css("border-color", "#D4A373")
+        $("#delete_confirm").css("background-color", "#FAEDCD")
+        $("#delete_confirm").css("color", "#D4A373")
+        $("#delete_first").html("CANCEL")
+    }
+    if (check == "CANCEL") {
+        $("#delete_confirm").css("pointer-events", "none")
+        $("#delete_confirm").css("border-color", "black")
+        $("#delete_confirm").css("background-color", "lightgray")
+        $("#delete_confirm").css("color", "gray")
+        $("#delete_first").html("DELETE")
+    }
+}
+
+function confirm_delete() {
+    db.collection("added_recipes").doc(doc_name).delete()
+    setTimeout(reload, 500)
+}
+
 
 setup = function () {
     $("#main_adder").scrollTop(0, 0)
@@ -181,6 +198,8 @@ setup = function () {
     jQuery("#finish_add").click(call_add);
     jQuery("#add_tag").click(adder_tag);
     jQuery("#add_ing").click(adder_ing);
+    jQuery("#delete_first").click(bring_confirm);
+    jQuery("#delete_confirm").click(confirm_delete);
     $("body").on("click", ".remove_tag", delete_function_tag);
     $("body").on("click", ".remove_ing", delete_function_ing);
 }

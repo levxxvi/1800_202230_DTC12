@@ -4,13 +4,12 @@ function adder_tag() {
     let tag = tags.length
     let z = jQuery("#recipe_tags").val();
     z = z.toLowerCase();
+    z = z.trim();
     if (z != "") {
         tags.push(z);
         $("#tag_list").append(`<li class="list_item"> <button id = "${tag}" class = "remove_tag"> ${z} </button> </li>`);
-        console.log(tags)
         $("#recipe_tags").val('');
     }
-    console.log(tag)
 }
 
 const ingred = [];
@@ -18,10 +17,10 @@ function adder_ing() {
     let ing = ingred.length
     let x = jQuery("#recipe_ingred").val();
     x = x.toLowerCase();
+    x = x.trim();
     if (x != "") {
         ingred.push(x);
         $("#ingred_list").append(`<li class="list_item"> <button id = "${ing}" class = "remove_ing"> ${x} </button> </li>`);
-        console.log(ingred)
         $("#recipe_ingred").val('');
     }
 }
@@ -34,6 +33,7 @@ function call_add() {
 
     let a = jQuery("#recipe_name").val();
     a = a.toLowerCase()
+    a = a.trim()
 
     let b = jQuery("#breakfast:checked").val();
 
@@ -73,7 +73,6 @@ function call_add() {
     let f = jQuery("#recipe_link").val();
 
     if (a == "" || (b != true && c != true && d != true && e != true) || (f == "")) {
-        console.log("invalid entry")
         jQuery("#error").html("Error: one or more required fields is missing")
     } else {
         if (b == true) {
@@ -110,8 +109,7 @@ function call_add() {
             description: details,
             link: f,
         })
-        console.log(a, b, c, d, e, f, details, ingred, tags)
-        // setTimeout(reload, 500)
+        setTimeout(reload, 500)
     }
 }
 
@@ -122,14 +120,12 @@ function reload() {
 function delete_function_tag() {
     tag = jQuery(this).attr('id')
     delete tags[tag];
-    console.log(tags)
     jQuery(this).parent().remove()
 }
 
 function delete_function_ing() {
     ing = jQuery(this).attr('id')
     delete ingred[ing];
-    console.log(ingred)
     jQuery(this).parent().remove()
 }
 

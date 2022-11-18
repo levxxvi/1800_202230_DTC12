@@ -37,7 +37,6 @@ function grocerySkeleton() {
     let test4 = ["d1", "d2", "d3", "d4", "d5", "d6"]
     let l4 = test1.length
     for (let i = 0; i < l4; i++) {
-        console.log()
         $('#dinner_list').append(`<li class="list_item">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="Grocery" value="option1">

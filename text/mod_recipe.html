@@ -123,6 +123,18 @@
                 border-radius: 3px;
             }
 
+            #delete_first {
+                content: "DELETE";
+                margin: 5px;
+                margin-left: 20%;
+                height: 38px;
+                width: 100px;
+                color: #D4A373;
+                background-color: #FAEDCD;
+                border-color: #D4A373;
+                border-radius: 3px;
+            }
+
             label {
                 margin-left: 10%;
             }
@@ -137,6 +149,19 @@
                 background-color: #FAEDCD;
                 border-color: #D4A373;
                 border-radius: 3px;
+            }
+
+            #delete_confirm {
+                margin: 5px;
+                margin-right: 20%;
+                float: right;
+                height: 38px;
+                width: 100px;
+                color: gray;
+                background-color: lightgray;
+                border-color: black;
+                border-radius: 3px;
+                pointer-events: none;
             }
 
             #add_tag {
@@ -198,6 +223,10 @@
                 border-color: #E9EDC9;
             }
 
+            #delete_buttons {
+                margin-top: 60px;
+            }
+
 
 
             #tag_list,
@@ -215,6 +244,11 @@
                 border-radius: 3px;
             }
 
+            #search_cards {
+                visibility: hidden;
+            }
+
+
 
             @media screen and (max-width: 600px) {
                 #finish_cancel {
@@ -223,6 +257,14 @@
 
                 #finish_add {
                     margin-left: 5%;
+                }
+
+                #delete_first {
+                    margin-left: 5%;
+                }
+
+                #delete_confirm {
+                    margin-right: 5%;
                 }
 
                 .break-column_list {
@@ -245,7 +287,24 @@
                     justify-content: center;
                 }
 
+                #delete_buttons {
+                    margin-top: 0px;
+                    flex-wrap: wrap;
+                    display: flex;
+                    justify-content: center;
+                }
+
                 #finish_cancel {
+                    margin: 0%;
+                    margin-top: 8px;
+                }
+
+                #delete_first {
+                    margin: 0%;
+                    margin-top: 8px;
+                }
+
+                #delete_confirm {
                     margin: 0%;
                     margin-top: 8px;
                 }
@@ -345,6 +404,13 @@
                     <button id="finish_cancel">CANCEL</button>
                     <div class="break-column_list"></div>
                     <button id="finish_add">FINISH</button>
+                </div>
+
+                <div id="delete_buttons">
+                    <button id="delete_confirm">CONFIRM?</button>
+                    <div class="break-column_list"></div>
+                    <button id="delete_first">DELETE</button>
+
                 </div>
 
 
