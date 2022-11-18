@@ -141,7 +141,7 @@ function pop_info() {
         }
 
         for (let i = 0; i < doc_tags.length; i++) {
-            if (doc_tags[i] != "brea" && doc_tags[i] != "lunch" && doc_tags[i] != "snack" && doc_tags[i] != "dinner") {
+            if (doc_tags[i] != "breakfast" && doc_tags[i] != "lunch" && doc_tags[i] != "snack" && doc_tags[i] != "dinner") {
                 tags.push(doc_tags[i]);
                 $("#tag_list").append(`<li class="list_item"> <button id = "${tags.length - 1}" class = "remove_tag"> ${doc_tags[i]} </button> </li>`);
             }
