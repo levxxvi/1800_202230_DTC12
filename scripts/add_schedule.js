@@ -15,7 +15,7 @@
                 currentUser.get()
                     .then(userDoc => {
                         var userEmail = userDoc.data().email;
-                        db.collection("userSchedule").add({
+                        db.collection("users").doc(user.uid).collection("user schedule").add({
                             code: scheduleID,
                             userID: userID,
                             date: Date,
