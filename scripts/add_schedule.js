@@ -50,3 +50,11 @@ function writeSchedule() {
         start: '2022-11-12T20:00:00'
     });
 }
+
+
+//or
+
+function addSchedule() {
+    //Enable the form fields
+    document.getElementById('personalInfoFields').disabled = false;
+ }
