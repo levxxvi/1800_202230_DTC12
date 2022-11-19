@@ -1,60 +1,35 @@
-var currentUser          
-
-function writeSchedule() {
-    //define a variable for the collection you want to create in Firestore to populate data
-    var scheduleRef = db.collection("schedule");
-
-    scheduleRef.add({
-        title: 'BLT sandwich',
-        start: '2022-11-01T12:00:00',
-        last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    });
-
-    scheduleRef.add({
-        title: 'Ramen',
-        start: '2022-11-01T18:00:00',
-        last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    });
-
-    scheduleRef.add({
-        title: 'Avocado toast',
-        start: '2022-11-07T12:00:00',
-        last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    });
-
-    scheduleRef.add({
-        title: 'Butter chicken',
-        start: '2022-11-07T18:00:00',
-        last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    });
-
-    scheduleRef.add({
-        title: 'PB jelly sandwich',
-        start: '2022-11-12T10:30:00',
-        end: '2022-11-12T12:30:00'
-    });
-    scheduleRef.add({
-        title: 'Tomato soup',
-        start: '2022-11-12T12:00:00'
-    });
-    scheduleRef.add({
-        title: 'Fruits',
-        start: '2022-11-12T14:30:00'
-    });
-    scheduleRef.add({
-        title: 'Grilled cheese',
-        start: '2022-11-12T17:30:00'
-    });
-    scheduleRef.add({
-        title: 'Smoothie bowl',
-        start: '2022-11-12T20:00:00'
-    });
-}
-
-
-//or
-
-function addSchedule() {
-    //Enable the form fields
-    document.getElementById('personalInfoFields').disabled = false;
- }
+    function addSchedule() {
+        console.log("inside add schedule")
+        let Date = document.getElementById("date").value;
+        let Breakfast = document.getElementById("breakfast").value;
+        let Lunch = document.getElementById("lunch").value;
+        let Snack = document.getElementById("snack").value;
+        let Dinner = document.getElementById("dinner").value;
+        console.log(Date, Breakfast, Lunch, Snack, Dinner);
+    
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                var currentUser = db.collection("users").doc(user.uid)
+                var userID = user.uid;
+                //get the document for current user.
+                currentUser.get()
+                    .then(userDoc => {
+                        var userEmail = userDoc.data().email;
+                        db.collection("userSchedule").add({
+                            code: scheduleID,
+                            userID: userID,
+                            date: Date,
+                            breakfast: Breakfast,
+                            lunch: Lunch,
+                            snack: Snack,
+                            dinner: Dinner,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                        }).then(()=>{
+                            window.location.href = "thanks.html"; //new line added
+                        })
+                    })
+            } else {
+                // No user is signed in.
+            }
+        });
+    }
