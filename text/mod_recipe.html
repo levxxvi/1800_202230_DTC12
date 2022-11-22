@@ -250,7 +250,7 @@
 
 
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 650px) {
                 #finish_cancel {
                     margin-right: 5%;
                 }
@@ -266,20 +266,9 @@
                 #delete_confirm {
                     margin-right: 5%;
                 }
-
-                .break-column_list {
-                    flex-basis: 100%;
-                    width: 0;
-                    margin-top: 5px;
-                }
             }
 
             @media screen and (max-width: 400px) {
-                .break-column_list {
-                    flex-basis: 100%;
-                    width: 0;
-                    margin-top: 5px;
-                }
 
                 #finish_buttons {
                     flex-wrap: wrap;
@@ -294,25 +283,31 @@
                     justify-content: center;
                 }
 
+                #finish_add {
+                    width: 100%;
+                    margin: 0%;
+                    margin-top: 5px;
+                }
+
                 #finish_cancel {
+                    width: 100%;
                     margin: 0%;
                     margin-top: 8px;
                 }
 
                 #delete_first {
+                    width: 100%;
                     margin: 0%;
                     margin-top: 8px;
                 }
 
                 #delete_confirm {
+                    width: 100%;
                     margin: 0%;
                     margin-top: 8px;
                 }
 
-                #finish_add {
-                    margin: 0%;
-                    margin-top: 5px;
-                }
+
             }
         </style>
     </head>
@@ -401,16 +396,15 @@
 
 
                 <div id="finish_buttons">
-                    <button id="finish_cancel">CANCEL</button>
-                    <div class="break-column_list"></div>
                     <button id="finish_add">FINISH</button>
+
+                    <button id="finish_cancel">CANCEL</button>
                 </div>
 
                 <div id="delete_buttons">
-                    <button id="delete_confirm">CONFIRM?</button>
-                    <div class="break-column_list"></div>
                     <button id="delete_first">DELETE</button>
 
+                    <button id="delete_confirm">CONFIRM?</button>
                 </div>
 
 
