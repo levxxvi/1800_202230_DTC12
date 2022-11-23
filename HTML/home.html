@@ -67,63 +67,45 @@
                     <a href="#"></a>
                 </i></td>
         </tr>
-        </div>
     </table>
     <br>
-
     <div class="container">
-        <h2>Breakfast</h2>
-        <img src="https://thebigmansworld.com/wp-content/uploads/2022/01/healthy-breakfast-recipes.jpeg"
-            alt="avocado toast" width="300em">
-        <span class="textbox">
-            <h3>Meal Title</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, sit aperiam consequatur molestias
-                eveniet
-                totam voluptates quisquam! Quae at quos autem incidunt doloremque nisi eaque consequuntur cum corporis
-                voluptatum debitis ipsa doloribus, error totam! Neque perspiciatis iusto quisquam ex quae.</p>
-        </span>
-    </div>
-    <br>
-
-    <div class="container">
-        <h2>Lunch</h2>
-        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/copycat-hamburger-helper1-1659463591.jpg?crop=0.668xw:1.00xh;0.176xw,0&resize=640:*"
-            alt="pasta" width="300em">
-        <div class="textbox">
-            <h3>Meal Title</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, sit aperiam consequatur molestias
-                eveniet
-                totam
-                voluptates quisquam! Quae at quos autem incidunt doloremque nisi eaque consequuntur cum corporis
-                voluptatum
-                debitis ipsa doloribus, error totam! Neque perspiciatis iusto quisquam ex quae.</p>
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div id="mealCardGroup" class="row row-cols-auto">
+            </div>
         </div>
     </div>
-    <br>
-
-    <div class="container">
-        <h2>Dinner</h2>
-        <img src="https://cdn.makegoodfood.ca/images/home/lets-get-cooking/goodfood_home_plate_visual.png"
-            alt="chicken breast" width="300em">
-        <div class="textbox">
-            <h3>Meal Title</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, sit aperiam consequatur molestias
-                eveniet
-                totam
-                voluptates quisquam! Quae at quos autem incidunt doloremque nisi eaque consequuntur cum corporis
-                voluptatum
-                debitis ipsa doloribus, error totam! Neque perspiciatis iusto quisquam ex quae.</p>
+    <template id="mealCardTemplate">
+        <div class="card border mx-auto" style="width: 80%;">
+            <img class="card-img-top">
+            <div class="card-body">
+                <h3 class="card-title">placeholder</h3>
+                <p class="card-length">placeholder</p>
+            </div>
+        </div>
+    </template>
+    <div class="card border mx-auto" style="width: 80%;">
+        <img class="card-img-top" src="https://thebigmansworld.com/wp-content/uploads/2022/01/healthy-breakfast-recipes.jpeg" alt="avocado toast">
+        <div class="card-body">
+            <h3 class="card-title">Meal title</h3>
+            <p class="card-ingredients">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, magnam praesentium maxime veritatis et doloremque nobis minus similique non quisquam maiores aliquid ab fuga, ad illum! Nihil minus ex iure.
+            </p>
         </div>
     </div>
     <nav id="footerPlaceholder"></nav>
 
     <nav id="navbarPlaceholder"></nav>
 
-    
+
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
+    <script src="../scripts/firebaseAPI_DTC12.js"></script>
     <script src="../scripts/skeleton.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/home.js"></script>
 </body>
 
 </html>
