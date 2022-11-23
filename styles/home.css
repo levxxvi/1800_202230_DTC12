@@ -4,6 +4,7 @@ body {
 
 h1 {
     padding: 1em;
+    color: #D4A373;
 }
 
 .days-table {
@@ -21,6 +22,8 @@ td {
 h2 {
     text-align: center;
     text-decoration: underline;
+    color: #D4A373;
+    text-decoration-color: #D4A373;
 }
 
 .textbox {
