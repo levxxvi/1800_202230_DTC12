@@ -66,13 +66,19 @@
         eventLimit: true, // allow "more" link when too many events
         //from FullCalendar addEvent documentation https://codepen.io/pen?editors=0010
         headerToolbar: {
-          center: 'addEventButton'
+          center: 'addEventButton, backButton'
         },
         customButtons: {
           addEventButton: {
             text: 'Customize Your Meal Schedule',
             click: function () {
               location.href = "add_schedule.html";
+            }
+          },
+          backButton: {
+            text: 'Home',
+            click: function () {
+              location.href = 'HTML/home.html';
             }
           }
         },

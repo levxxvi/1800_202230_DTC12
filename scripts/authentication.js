@@ -25,16 +25,30 @@ var uiConfig = {
           .catch(function (error) {
             console.log("Error adding new user: " + error);
           });
-        db.collection("users").doc(user.uid).collection(user.displayName+"Recipes").doc("New Recipes Test").set({
-          name: "Chicken and Fries"
+        db.collection("users").doc(user.uid).collection(user.displayName + "Recipes").doc("Dummy Recipes").set({
+          name: "Replace this recipe with your own!",
+          breakfast: true,
+          lunch: true,
+          snack: true,
+          dinner: true,
+          tag: "You can remove tags",
+          ingredients: "and ingredients",
+          description: "You can save the steps here!",
+          link: "and link to external websites or videos."
         });
-        db.collection("users").doc(user.uid).collection(user.displayName+"Schedule").doc("New Schedule Test").set({
-          date: "11/16/2022",
-          meal: "Chicken and Fries",
+        db.collection("users").doc(user.uid).collection(user.displayName + "Schedule").doc("Dummy Schedule Test").set({
+          date: "2000/11/16",
+          breakfast: "Pancakes",
+          lunch: "Chicken and Fries",
+          dinner: "Steak",
+          dessert: "Sundae",
         });
       } else {
         return true;
       }
+      sessionStorage.setItem('user', user)
+      sessionStorage.setItem('user.uid', user.uid)
+      sessionStorage.setItem('user.displayName', user.displayName)
       return false;
     },
     uiShown: function () {
