@@ -36,19 +36,20 @@ var uiConfig = {
           description: "You can save the steps here!",
           link: "and link to external websites or videos."
         });
-        db.collection("users").doc(user.uid).collection(user.displayName + "Schedule").doc("Dummy Schedule Test").set({
-          date: "2022/11/23",
+        db.collection("users").doc(user.uid).collection(user.displayName + "Schedule").doc("2022-11-23").set({
+          date: "2022-11-23",
           breakfast: "Pancakes",
           lunch: "Chicken and Fries",
           dinner: "Steak",
           dessert: "Sundae",
         });
+        localStorage.setItem('userUid', user.uid)
+        localStorage.setItem('userDisplayName', user.displayName)
       } else {
+        localStorage.setItem('userUid', user.uid)
+        localStorage.setItem('userDisplayName', user.displayNamse)
         return true;
       }
-      sessionStorage.setItem('user', user)
-      sessionStorage.setItem('user.uid', user.uid)
-      sessionStorage.setItem('user.displayName', user.displayName)
       return false;
     },
     uiShown: function () {

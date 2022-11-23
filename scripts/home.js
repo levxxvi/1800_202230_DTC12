@@ -1,12 +1,15 @@
 const h1 = document.querySelector('h1');
+const uUid = localStorage.getItem('userUid')
+const uDisplayName = localStorage.getItem('userDisplayName')
+var today;
 
 function populateDate() {
-    var today = new Date();
+    today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
 
-    today = yyyy + '/' + mm + '/' + dd;
+    today = yyyy + '-' + mm + '-' + dd;
 
     h1.textContent = today;
 }
@@ -42,7 +45,7 @@ function populateCardsDynamically() {
     let photonum = 111
     let card_num = 0
 
-    db.collection("users").doc(user.uid).collection(user.displayName + "Schedule").doc(today).get().then((querySnapshot) => {
+    db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(today).get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 console.log(doc.id, " => ", doc.data());
                 card_num += 1
