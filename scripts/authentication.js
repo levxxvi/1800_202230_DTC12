@@ -37,7 +37,7 @@ var uiConfig = {
           link: "and link to external websites or videos."
         });
         db.collection("users").doc(user.uid).collection(user.displayName + "Schedule").doc("Dummy Schedule Test").set({
-          date: "2000/11/16",
+          date: "2022/11/16",
           breakfast: "Pancakes",
           lunch: "Chicken and Fries",
           dinner: "Steak",
@@ -59,7 +59,7 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: 'HTML/home copy.html',
+  signInSuccessUrl: 'HTML/home.html',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
