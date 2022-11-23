@@ -4,8 +4,9 @@ function cardSkeleton() {
     db.collection("added_recipes")
         .get()
         .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
+            querySnapshot.forEach((doc) => { // get all recipes
                 card_num += 1
+                // populate a recipe card to the page
                 $("#search_cards").append(`
                 <button class = "recipe_card" id = "${doc.data().name}">
 <div class="cards" id="top_card">
@@ -30,13 +31,13 @@ function cardSkeleton() {
                 photonum += 1
                 let list = doc.data().tag
                 let list_len = list.length
-                for (let i = 0; i < list_len; i++) {
+                for (let i = 0; i < list_len; i++) { // list items below the recipe
                     $(`#card_list_${card_num}`).append('<li class="list_item">' + list[i] + '</li>');
                 }
 
             });
         })
-        .catch((error) => {
+        .catch((error) => { // catch errors
             console.log("Error getting documents: ", error);
         });
 
