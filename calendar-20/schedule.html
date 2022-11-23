@@ -56,7 +56,7 @@
         plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
         height: 'parent',
         header: {
-          left: 'prev,next  today',
+          left: 'backButton prev,next  today',
           center: 'title addEventButton',
           right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
@@ -66,7 +66,7 @@
         eventLimit: true, // allow "more" link when too many events
         //from FullCalendar addEvent documentation https://codepen.io/pen?editors=0010
         headerToolbar: {
-          center: 'addEventButton, backButton'
+          center: 'addEventButton backButton'
         },
         customButtons: {
           addEventButton: {
@@ -78,7 +78,7 @@
           backButton: {
             text: 'Home',
             click: function () {
-              location.href = 'HTML/home.html';
+              location.href = '../HTML/home.html';
             }
           }
         },
