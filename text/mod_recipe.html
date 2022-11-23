@@ -126,9 +126,10 @@
             #delete_first {
                 content: "DELETE";
                 margin: 5px;
-                margin-left: 20%;
+                margin-left: 5%;
                 height: 38px;
-                width: 100px;
+                width: 90%;
+                margin-right: 5%;
                 color: #D4A373;
                 background-color: #FAEDCD;
                 border-color: #D4A373;
@@ -149,19 +150,6 @@
                 background-color: #FAEDCD;
                 border-color: #D4A373;
                 border-radius: 3px;
-            }
-
-            #delete_confirm {
-                margin: 5px;
-                margin-right: 20%;
-                float: right;
-                height: 38px;
-                width: 100px;
-                color: gray;
-                background-color: lightgray;
-                border-color: black;
-                border-radius: 3px;
-                pointer-events: none;
             }
 
             #add_tag {
@@ -223,10 +211,6 @@
                 border-color: #E9EDC9;
             }
 
-            #delete_buttons {
-                margin-top: 60px;
-            }
-
 
 
             #tag_list,
@@ -276,12 +260,7 @@
                     justify-content: center;
                 }
 
-                #delete_buttons {
-                    margin-top: 0px;
-                    flex-wrap: wrap;
-                    display: flex;
-                    justify-content: center;
-                }
+
 
                 #finish_add {
                     width: 100%;
@@ -294,20 +273,6 @@
                     margin: 0%;
                     margin-top: 8px;
                 }
-
-                #delete_first {
-                    width: 100%;
-                    margin: 0%;
-                    margin-top: 8px;
-                }
-
-                #delete_confirm {
-                    width: 100%;
-                    margin: 0%;
-                    margin-top: 8px;
-                }
-
-
             }
         </style>
     </head>
@@ -315,7 +280,10 @@
     <body>
         <div id="center">
             <div id="main_adder" class="fixed-top">
-                <p><span class="required">* required fields</span></p>
+                <div id="delete_buttons">
+                    <button id="delete_first">DELETE</button>
+                </div>
+                <br>
                 <div class="form-group">
                     <label for="recipe_name">Recipe name:</label>
                     <input type="text" class="form-control" id="recipe_name" placeholder="Recipe Name" readonly>
@@ -401,11 +369,7 @@
                     <button id="finish_cancel">CANCEL</button>
                 </div>
 
-                <div id="delete_buttons">
-                    <button id="delete_first">DELETE</button>
 
-                    <button id="delete_confirm">CONFIRM?</button>
-                </div>
 
 
             </div>

@@ -174,20 +174,12 @@ function bring_confirm() {
         $("#delete_confirm").css("border-color", "#D4A373")
         $("#delete_confirm").css("background-color", "#FAEDCD")
         $("#delete_confirm").css("color", "#D4A373")
-        $("#delete_first").html("CANCEL")
+        $("#delete_first").html("CONFIRM")
     }
-    if (check == "CANCEL") {
-        $("#delete_confirm").css("pointer-events", "none")
-        $("#delete_confirm").css("border-color", "black")
-        $("#delete_confirm").css("background-color", "lightgray")
-        $("#delete_confirm").css("color", "gray")
-        $("#delete_first").html("DELETE")
+    if (check == "CONFIRM") {
+        db.collection("added_recipes").doc(doc_name).delete()
+        setTimeout(reload, 500)
     }
-}
-
-function confirm_delete() {
-    db.collection("added_recipes").doc(doc_name).delete()
-    setTimeout(reload, 500)
 }
 
 
