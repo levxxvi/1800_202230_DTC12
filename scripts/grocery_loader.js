@@ -7,7 +7,7 @@ function grocerySkeleton() {
         $('#breakfast_list').append(`<li class="list_item">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="Grocery" value="option1">
-                        <label class="form-check-label" for="dinner">${test1[i]}</label>
+                        <label class="form-check-label" for="dinner"> &nbsp; ${test1[i]}</label>
                     </div>
                 </li>`);
     }
@@ -18,7 +18,7 @@ function grocerySkeleton() {
         $('#lunch_list').append(`<li class="list_item">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="Grocery" value="option1">
-                        <label class="form-check-label" for="dinner">${test2[i]}</label>
+                        <label class="form-check-label" for="dinner"> &nbsp; ${test2[i]}</label>
                     </div>
                 </li>`);
     }
@@ -29,7 +29,7 @@ function grocerySkeleton() {
         $('#snack_list').append(`<li class="list_item">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="Grocery" value="option1">
-                        <label class="form-check-label" for="dinner">${test3[i]}</label>
+                        <label class="form-check-label" for="dinner"> &nbsp; ${test3[i]}</label>
                     </div>
                 </li>`);
     }
@@ -40,7 +40,7 @@ function grocerySkeleton() {
         $('#dinner_list').append(`<li class="list_item">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="Grocery" value="option1">
-                        <label class="form-check-label" for="dinner">${test4[i]}</label>
+                        <label class="form-check-label" for="dinner"> &nbsp; ${test4[i]}</label>
                     </div>
                 </li>`);
     }

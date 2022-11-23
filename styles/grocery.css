@@ -63,6 +63,15 @@ hr {
     margin-right: 10px;
 }
 
+.form-check-input {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.form-check-label {
+    font-size: 2rem;
+}
+
 .button {
     color: #D4A373;
     background-color: #FAEDCD;
