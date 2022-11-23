@@ -8,7 +8,7 @@ function populateDate() {
 
     today = mm + '/' + dd + '/' + yyyy;
 
-    h1 = today
+    h1.textContent = today;
 }
 populateDate();
 
