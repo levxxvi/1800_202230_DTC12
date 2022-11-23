@@ -1,4 +1,3 @@
-
 function cardSkeleton() {
     let photonum = 111
     let card_num = 0
@@ -27,8 +26,7 @@ function cardSkeleton() {
                 </div>
             </div>
             </button>
-                `
-                )
+                `)
                 photonum += 1
                 let list = doc.data().tag
                 let list_len = list.length
@@ -43,4 +41,4 @@ function cardSkeleton() {
         });
 
 }
-cardSkeleton();  //invoke the function
+cardSkeleton(); //invoke the function
