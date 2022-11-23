@@ -1,3 +1,17 @@
+const h1 = document.querySelector('h1');
+
+function populateDate() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+
+    h1 = today
+}
+populateDate();
+
 function populateCardsDynamically() {
     let mealCardTemplate = document.getElementById("mealCardTemplate");
     let mealCardGroup = document.getElementById("mealCardGroup");
