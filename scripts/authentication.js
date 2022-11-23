@@ -37,7 +37,7 @@ var uiConfig = {
           link: "and link to external websites or videos."
         });
         db.collection("users").doc(user.uid).collection(user.displayName + "Schedule").doc("Dummy Schedule Test").set({
-          date: "2022/11/16",
+          date: "2022/11/23",
           breakfast: "Pancakes",
           lunch: "Chicken and Fries",
           dinner: "Steak",

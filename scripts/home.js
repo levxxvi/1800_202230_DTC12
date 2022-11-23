@@ -42,30 +42,33 @@ function populateCardsDynamically() {
     let photonum = 111
     let card_num = 0
 
-    db.collection("users").doc(user.uid + "/" + user.displayName + "Schedule").get().then((querySnapshot) => {
+    db.collection("users").doc(user.uid).collection(user.displayName + "Schedule").doc(today).get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
+                console.log(doc.id, " => ", doc.data());
                 card_num += 1
-                $("#search_cards").append(`
+                $("#todaysMeals").append(
+                    `
                 <button class = "recipe_card" id = "${doc.data().name}">
-                <div class="cards" id="top_card">
-                <img src="https://picsum.photos/${photonum}">
-                <div id="text_area">
-                    <div id="title_area">
-                        <h1 class="card_title" id="get_title_3">
-                            ${doc.data().name}
-                        </h1>
-                        <hr>
-                    </div>
-                    
-                    <div id="list_area">
-                        <ul class="lists" id="card_list_${card_num}">
+                    <div class="cards" id="top_card">
+                        <img src="https://picsum.photos/${photonum}">
+                        <div id="text_area">
+                            <div id="title_area">
+                                <h1 class="card_title" id="get_title_3">
+                                    ${doc.data().name}
+                                </h1>
+                                <hr>
+                            </div>
+                            
+                            <div id="list_area">
+                                <ul class="lists" id="card_list_${card_num}">
 
-                        </ul>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            </button>
-                `)
+                </button>
+                `
+                )
                 photonum += 1
                 let list = doc.data().tag
                 let list_len = list.length
