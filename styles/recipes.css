@@ -186,7 +186,7 @@ hr {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
     #text_area {
         height: fit-content;
         width: calc(100% - 20px);
@@ -195,8 +195,11 @@ hr {
     }
 
     .cards img {
-        width: calc(100% - 10px);
+        margin-top: 10px;
+        width: calc(95%);
         float: right;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
     }
 
     .cards {
