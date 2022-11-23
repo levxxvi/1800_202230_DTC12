@@ -16,98 +16,6 @@ body {
     margin-right: 2.5%;
 }
 
-#add_recipe {
-    height: 0px;
-
-}
-
-.cards {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    background-color: #FAEDCD;
-    border: solid #FAEDCD;
-    border-width: 4px;
-    border-radius: 5px;
-    height: 222px;
-    float: left;
-}
-
-.recipe_card {
-    width: calc(96% - 8px);
-    padding: 0px;
-    outline: none;
-    background: transparent;
-    border: 1px solid transparent;
-    margin: 2%;
-}
-
-.cards img {
-    box-sizing: border-box;
-    float: left;
-    margin: 5px;
-    width: 200px;
-    border-radius: 5px;
-}
-
-#text_area {
-    color: #D4A373;
-    text-align: center;
-    float: right;
-    margin-left: 20px;
-    margin-right: 10px;
-    width: calc(100% - 230px);
-    height: 100%;
-}
-
-.card_title {
-    margin-top: 5px;
-    font-weight: 1000;
-    font-size: 2.5rem;
-}
-
-#title_area {
-    height: fit-content;
-}
-
-#list_area {
-    overflow: hidden;
-    height: fit-content;
-    max-height: 80px;
-}
-
-.list_item {
-    font-weight: 5000;
-    font-size: 1.25rem;
-    overflow: hidden;
-    float: left;
-    width: fit-content;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 10px;
-}
-
-.lists {
-    height: 100%;
-    display: inline-block;
-    padding: 0px;
-    margin: 0px;
-    margin-left: 20px;
-}
-
-hr {
-    border: 1px solid #D4A373;
-}
-
-#recipe_box {
-    width: 100%;
-    margin-top: 30px;
-    float: left;
-    border-radius: 5px;
-    border: #D4A373 solid 5px;
-    background-color: #D4A373;
-    margin-bottom: 10px;
-}
 
 #search_box {
     margin-top: 20px;
@@ -115,19 +23,6 @@ hr {
     width: 100%;
     border-radius: 5px;
     border: #D4A373 solid 5px;
-}
-
-#add_button {
-    padding: 0px;
-    margin: 5px;
-    margin-left: calc(98% - 50px);
-    float: left;
-    width: 42px;
-    height: 42px;
-    color: #D4A373;
-    background-color: #FAEDCD;
-    border-color: #D4A373;
-    border-radius: 3px;
 }
 
 #search {
@@ -139,6 +34,7 @@ hr {
     border-color: #D4A373;
     border-radius: 3px;
 }
+
 
 #search_tags {
     margin: 5px;
@@ -163,17 +59,19 @@ hr {
     border-radius: 3px;
 }
 
-#search_name {
+
+#search_tag_img {
+    float: right;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+#search_name_img {
     float: right;
     margin-right: 5px;
     margin-top: 5px;
 }
 
-#search_tag {
-    float: right;
-    margin-right: 5px;
-    margin-top: 3px;
-}
 
 #search_image {
     font-size: 36px;
@@ -182,6 +80,128 @@ hr {
 .material-icons.md-48 {
     float: left;
     font-size: 40px;
+}
+
+
+
+
+
+
+#recipe_box {
+    width: 100%;
+    margin-top: 30px;
+    float: left;
+    border-radius: 5px;
+    border: #D4A373 solid 5px;
+    background-color: #D4A373;
+    margin-bottom: 10px;
+}
+
+
+#add_button {
+    padding: 0px;
+    margin: 5px;
+    margin-left: calc(98% - 50px);
+    float: left;
+    width: 42px;
+    height: 42px;
+    color: #D4A373;
+    background-color: #FAEDCD;
+    border-color: #D4A373;
+    border-radius: 3px;
+}
+
+#add_recipe {
+    height: 0px;
+}
+
+
+
+.recipe_card {
+    width: calc(96% - 8px);
+    padding: 0px;
+    outline: none;
+    background: transparent;
+    border: 1px solid transparent;
+    margin: 2%;
+}
+
+
+.cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #FAEDCD;
+    border: solid #FAEDCD;
+    border-width: 4px;
+    border-radius: 5px;
+    height: 222px;
+    float: left;
+}
+
+.cards img {
+    box-sizing: border-box;
+    float: left;
+    margin: 5px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+
+
+#text_area {
+    color: #D4A373;
+    text-align: center;
+    float: right;
+    margin-left: 20px;
+    margin-right: 10px;
+    width: calc(100% - 230px);
+    height: 100%;
+}
+
+
+#title_area {
+    height: fit-content;
+}
+
+
+.card_title {
+    margin-top: 5px;
+
+    font-size: 2.5rem;
+}
+
+hr {
+    border: 1px solid #D4A373;
+}
+
+
+
+#list_area {
+    overflow: hidden;
+    height: fit-content;
+    max-height: 80px;
+}
+
+
+.lists {
+    height: 100%;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+
+.list_item {
+
+    font-size: 1.25rem;
+    overflow: hidden;
+    float: left;
+    width: fit-content;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 10px;
 }
 
 
@@ -213,7 +233,6 @@ hr {
     #search {
         width: calc(100% - 10px);
     }
-
 
     #search_tags {
         float: right;

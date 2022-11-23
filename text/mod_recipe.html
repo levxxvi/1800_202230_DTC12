@@ -7,60 +7,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-            </script>
-
-        <!-- Boostrap Library JS CDN  go here -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-            </script>
-
-        <!-------------------------------------------------------->
-        <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-        <!-------------------------------------------------------->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-        <link type="text/css" rel="stylesheet"
-            href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
-        <!--Google Icons reference added by Lex Wong-->
-        <!-- Google Icons (Material Design)-->
-
-
-        <!-------------------------------------------->
-        <!-- Other libraries and styles of your own -->
-        <!-------------------------------------------->
-
-
         <style>
             body {
                 background-color: #FEFAE0;
-
+                font-family: useFont;
             }
 
             #center {
                 font-family: useFont;
-            }
-
-            #meal_times {
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-                justify-content: center;
-            }
-
-            #main {
-                opacity: 0.3;
-            }
-
-            .navbar {
-                height: 0px;
             }
 
             #main_adder {
@@ -78,52 +32,7 @@
                 margin-right: calc(100% / 6);
             }
 
-            .form-group {
-                justify-content: center;
-            }
-
-            #recipe_name,
-            #recipe_link,
-            #recipe_tags,
-            #recipe_ingred,
-            #details_form {
-                margin-top: 4px;
-                margin-left: 10%;
-                width: 80%;
-                color: #D4A373;
-                background-color: #FAEDCD;
-            }
-
-            #recipe_name {
-                color: gray;
-            }
-
-            #tags_form,
-            #ingred_form {
-                overflow-y: scroll;
-                height: 100px;
-                margin-top: 46px;
-                margin-left: 10%;
-                width: 80%;
-                color: #D4A373;
-                background-color: #FAEDCD;
-                border: #D4A373 2px;
-                border-radius: 5px;
-            }
-
-            #finish_add {
-                margin: 5px;
-                margin-left: 20%;
-                float: left;
-                height: 38px;
-                width: 100px;
-                color: #D4A373;
-                background-color: #FAEDCD;
-                border-color: #D4A373;
-                border-radius: 3px;
-            }
-
-            #delete_first {
+            #delete {
                 content: "DELETE";
                 margin: 5px;
                 margin-left: 5%;
@@ -136,20 +45,60 @@
                 border-radius: 3px;
             }
 
+            #recipe_name,
+            #recipe_link,
+            #recipe_tags,
+            #recipe_ingred {
+                margin-top: 4px;
+                margin-left: 10%;
+                width: 80%;
+                color: #D4A373;
+                background-color: #FAEDCD;
+            }
+
+            .form-group {
+                justify-content: center;
+            }
+
+            .form-control::placeholder {
+                color: #D4A373;
+            }
+
             label {
                 margin-left: 10%;
             }
 
-            #finish_cancel {
-                margin: 5px;
-                margin-right: 20%;
-                float: right;
-                height: 38px;
-                width: 100px;
+            .form-check-input {
+                background-color: #E9EDC9;
+                border-color: #CCD5AE;
+            }
+
+            .form-check-input:checked {
+                background-color: #CCD5AE;
+                border-color: #E9EDC9;
+            }
+
+
+
+            #meal_times {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: center;
+            }
+
+            #details_form,
+            #tags_form,
+            #ingred_form {
+                overflow-y: scroll;
+                height: 100px;
+                margin-top: 46px;
+                margin-left: 10%;
+                width: 80%;
                 color: #D4A373;
                 background-color: #FAEDCD;
-                border-color: #D4A373;
-                border-radius: 3px;
+                border: #D4A373 2px;
+                border-radius: 5px;
             }
 
             #add_tag {
@@ -176,11 +125,19 @@
                 border-radius: 3px;
             }
 
-            #error {
-                margin: 0px;
-                margin-top: 8px;
-                text-align: center;
-                color: red;
+            #tag_list,
+            #ingred_list {
+                list-style: none;
+                padding-left: 0px;
+            }
+
+            .remove_ing,
+            .remove_tag {
+                margin-top: 5px;
+                color: #D4A373;
+                background-color: #FAEDCD;
+                border-color: #D4A373;
+                border-radius: 3px;
             }
 
             .require {
@@ -197,42 +154,50 @@
                 opacity: 0.5;
             }
 
-            .form-control::placeholder {
-                color: #D4A373;
-            }
-
-            .form-check-input {
-                background-color: #E9EDC9;
-                border-color: #CCD5AE;
-            }
-
-            .form-check-input:checked {
-                background-color: #CCD5AE;
-                border-color: #E9EDC9;
-            }
 
 
-
-            #tag_list,
-            #ingred_list {
-                list-style: none;
-                padding-left: 0px;
-            }
-
-            .remove_ing,
-            .remove_tag {
-                margin-top: 5px;
+            #finish_cancel {
+                margin: 5px;
+                margin-right: 20%;
+                float: right;
+                height: 38px;
+                width: 100px;
                 color: #D4A373;
                 background-color: #FAEDCD;
                 border-color: #D4A373;
                 border-radius: 3px;
             }
 
+            #finish_add {
+                margin: 5px;
+                margin-left: 20%;
+                float: left;
+                height: 38px;
+                width: 100px;
+                color: #D4A373;
+                background-color: #FAEDCD;
+                border-color: #D4A373;
+                border-radius: 3px;
+            }
+
+            #error {
+                margin: 0px;
+                margin-top: 8px;
+                text-align: center;
+                color: red;
+            }
+
+            #main {
+                opacity: 0.3;
+            }
+
             #search_cards {
                 visibility: hidden;
             }
 
-
+            .navbar {
+                height: 0px;
+            }
 
             @media screen and (max-width: 650px) {
                 #finish_cancel {
@@ -241,14 +206,6 @@
 
                 #finish_add {
                     margin-left: 5%;
-                }
-
-                #delete_first {
-                    margin-left: 5%;
-                }
-
-                #delete_confirm {
-                    margin-right: 5%;
                 }
             }
 
@@ -259,8 +216,6 @@
                     display: flex;
                     justify-content: center;
                 }
-
-
 
                 #finish_add {
                     width: 100%;
@@ -281,7 +236,7 @@
         <div id="center">
             <div id="main_adder" class="fixed-top">
                 <div id="delete_buttons">
-                    <button id="delete_first">DELETE</button>
+                    <button id="delete">DELETE</button>
                 </div>
                 <br>
                 <div class="form-group">

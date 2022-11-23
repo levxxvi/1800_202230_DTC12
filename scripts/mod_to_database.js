@@ -191,8 +191,7 @@ setup = function () {
     jQuery("#finish_add").click(call_add); // modify recipe
     jQuery("#add_tag").click(adder_tag); // add a tag
     jQuery("#add_ing").click(adder_ing); // add an ingredient
-    jQuery("#delete_first").click(bring_confirm); // start delete
-    jQuery("#delete_confirm").click(confirm_delete); // confirm delete
+    jQuery("#delete_first").click(bring_confirm); // start delete or confirm delete
     $("body").on("click", ".remove_tag", delete_function_tag); // remove a tag
     $("body").on("click", ".remove_ing", delete_function_ing); // remove an ingredient
 }
