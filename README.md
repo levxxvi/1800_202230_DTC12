@@ -19,7 +19,7 @@ Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap
-* ...
+* Firebase
 
 ## Content
 
@@ -28,17 +28,21 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
+├── AbrilFatface-Regular.ttf # Google font file 
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
+├── calendar-20
+├── HTML
 ├── images                   # Folder for images
     /blah.jpg                # 
 ├── scripts                  # Folder for scripts
     /blah.js                 # 
 ├── styles                   # Folder for styles
     /blah.css                # 
+└── text
 
 Firebase hosting files: 
 ├── .firebaserc...
