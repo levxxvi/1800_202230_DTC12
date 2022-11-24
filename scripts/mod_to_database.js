@@ -1,6 +1,6 @@
 const tags = []; // tags array
 var doc_name = "" // recipe name
-const h1 = document.querySelector('h1');
+
 const uUid = localStorage.getItem('userUid')
 const uDisplayName = localStorage.getItem('userDisplayName')
 

@@ -1,5 +1,5 @@
 const tags = []; // tags array
-const h1 = document.querySelector('h1');
+
 const uUid = localStorage.getItem('userUid')
 const uDisplayName = localStorage.getItem('userDisplayName')
 
@@ -100,7 +100,7 @@ function call_add() { // add information to database
             if (ingred[i] != undefined) { ingred.push(ingred[i]); } // remove empty ingredients
         ingred.splice(0, len);
 
-        db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(doc_name).set({ // push to firebase
+        db.collection("users").doc(uUid).collection(uDisplayName + "Recipes").doc(a).set({ // push to firebase
             name: a,
             breakfast: b,
             lunch: c,
