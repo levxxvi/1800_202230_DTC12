@@ -1,5 +1,9 @@
 const tags = []; // tags array
 var doc_name = "" // recipe name
+const h1 = document.querySelector('h1');
+const uUid = localStorage.getItem('userUid')
+const uDisplayName = localStorage.getItem('userDisplayName')
+
 
 function adder_tag() { // pull tags from html, format them, add them to a array
     let tag = tags.length // format tags
@@ -93,8 +97,7 @@ function call_add() { // add information to database
         for (i = 0; i < len; i++)
             if (ingred[i] != undefined) { ingred.push(ingred[i]); } // remove empty ingredients
         ingred.splice(0, len);
-
-        db.collection("added_recipes").doc(doc_name).set({ // push to firebase
+        db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(doc_name).set({ // push to firebase
             name: doc_name,
             breakfast: b,
             lunch: c,
@@ -124,7 +127,7 @@ function delete_function_ing() { // remove a ingredient from the array
 
 function pop_info() {
     var recipe = localStorage.getItem("rec_name")
-    db.collection("added_recipes").doc(recipe).get().then(rec_info => { // pulls all info from database
+    db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(doc_name).get().then(rec_info => { // pulls all info from database
         var doc_tags = rec_info.data().tag;
         var doc_ing = rec_info.data().ingredients;
 
@@ -178,7 +181,7 @@ function bring_confirm() { // delete a recipe
         $("#delete_first").html("CONFIRM")
     }
     if (check == "CONFIRM") { // deletes the recipe
-        db.collection("added_recipes").doc(doc_name).delete()
+        db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(doc_name).delete()
         setTimeout(reload, 500)
     }
 }
