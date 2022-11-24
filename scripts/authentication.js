@@ -45,9 +45,13 @@ var uiConfig = {
         });
         localStorage.setItem('userUid', user.uid)
         localStorage.setItem('userDisplayName', user.displayName)
+        console.log(user.uid);
+        console.log(user.displayName)
       } else {
         localStorage.setItem('userUid', user.uid)
-        localStorage.setItem('userDisplayName', user.displayNamse)
+        localStorage.setItem('userDisplayName', user.displayName)
+        console.log(user.uid);
+        console.log(user.displayName)
         return true;
       }
       return false;
