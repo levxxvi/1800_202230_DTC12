@@ -1,18 +1,18 @@
+@font-face {
+    font-family: useFont;
+    src: url(./AbrilFatface-Regular.ttf);
+}
+
 body {
     background-color: #FEFAE0;
 }
 
-h1 {
-    padding: 1em;
+#pulledDate {
+    padding: 10px;
+    padding-left: 15px;
     color: #D4A373;
-}
-
-td {
-    width: 150px;
-    text-align: center;
-    background-color: #CCD5AE;
-    border: 1px solid black;
-    padding: 5px;
+    font-family: useFont;
+    font-size: 60px;
 }
 
 h2 {
@@ -61,8 +61,6 @@ h2 {
     border-radius: 5px;
 }
 
-
-
 #text_area {
     color: #D4A373;
     text-align: center;
@@ -73,15 +71,13 @@ h2 {
     height: 100%;
 }
 
-
 #title_area {
     height: fit-content;
 }
 
-
 .card_title {
     margin-top: 5px;
-
+    font-family: useFont;
     font-size: 2.5rem;
 }
 
@@ -98,4 +94,29 @@ hr {
     background-color: #D4A373;
     margin-bottom: 10px;
     overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+    #pulledDate {
+        margin: 0px;
+    }
+    #text_area {
+        height: fit-content;
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .cards img {
+        margin-top: 10px;
+        width: calc(95%);
+        float: right;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+
+    .cards {
+        height: fit-content;
+        display: inline;
+    }
 }
