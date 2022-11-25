@@ -11,7 +11,6 @@ function populateDate() {
     var yyyy = today.getFullYear();
 
     today = yyyy + '-' + mm + '-' + dd;
-
     h1.textContent = today;
 }
 populateDate();
