@@ -2,14 +2,6 @@ body {
     background-color: #FEFAE0;
 }
 
-.AddNewSchedule {
-    display: inline;
-}
-
-#backBtn {
-    display: inline;
-}
-
 #date {
     background-color: #E9EDC9;
     border-color: #D4A373;
