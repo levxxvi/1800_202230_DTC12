@@ -16,23 +16,23 @@ var uiConfig = {
       var user = authResult.user; // get the user object from the Firebase authentication database
       if (authResult.additionalUserInfo.isNewUser) { //if new user
         db.collection("users").doc(user.uid).set({ //write to firestore. We are using the UID for the ID in users collection
-            name: user.displayName, //"users" collection
-            email: user.email, //with authenticated user's ID (user.uid)
-          }).then(function () {
-            console.log("New user added to firestore");
-            window.location.assign("index.html"); //re-direct to main.html after signup
-          })
+          name: user.displayName, //"users" collection
+          email: user.email, //with authenticated user's ID (user.uid)
+        }).then(function () {
+          console.log("New user added to firestore");
+          window.location.assign("index.html"); //re-direct to main.html after signup
+        })
           .catch(function (error) {
             console.log("Error adding new user: " + error);
           });
-        db.collection("users").doc(user.uid).collection(user.displayName + "Recipes").doc("Dummy Recipes").set({
-          name: "Replace this recipe with your own!",
+        db.collection("users").doc(user.uid).collection(user.displayName + "Recipes").doc("Replace this recipe!").set({
+          name: "Replace this recipe!",
           breakfast: true,
           lunch: true,
           snack: true,
           dinner: true,
-          tag: "You can remove tags",
-          ingredients: "and ingredients",
+          tag: ["You", "can", "remove", "tags"],
+          ingredients: ["and", "add", "ingredients"],
           description: "You can save the steps here!",
           link: "and link to external websites or videos."
         });
@@ -40,8 +40,8 @@ var uiConfig = {
           date: "2022-11-23",
           breakfast: "Pancakes",
           lunch: "Chicken and Fries",
+          snack: "Sundae",
           dinner: "Steak",
-          dessert: "Sundae",
         });
         localStorage.setItem('userUid', user.uid)
         localStorage.setItem('userDisplayName', user.displayName)

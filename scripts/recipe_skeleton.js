@@ -1,7 +1,10 @@
+const uUid = localStorage.getItem('userUid')
+const uDisplayName = localStorage.getItem('userDisplayName')
+
 function cardSkeleton() {
     let photonum = 111
     let card_num = 0
-    db.collection("added_recipes")
+    db.collection("users").doc(uUid).collection(uDisplayName + "Recipes")
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => { // get all recipes

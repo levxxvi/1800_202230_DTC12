@@ -95,6 +95,7 @@ body {
     border: #D4A373 solid 5px;
     background-color: #D4A373;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 

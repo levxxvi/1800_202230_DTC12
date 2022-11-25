@@ -1,10 +1,13 @@
+const uUid = localStorage.getItem('userUid')
+const uDisplayName = localStorage.getItem('userDisplayName')
+
 function name_search() {
     $("#search_cards").html("") // take user search
     let photonum = 111
     let card_num = 0
     let name_search = jQuery("#search").val();
     name_search = name_search.toLowerCase();
-    db.collection("added_recipes").where("name", "==", name_search) // search by name for documents
+    db.collection("users").doc(uUid).collection(uDisplayName + "Recipes").where("name", "==", name_search) // search by name for documents
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => { // find all recipes
@@ -52,7 +55,7 @@ function tag_search() {
     let card_num = 0
     let tag_search = jQuery("#search").val();
     tag_search = tag_search.toLowerCase();
-    db.collection("added_recipes").where("tag", "array-contains", tag_search) // find documents by name
+    db.collection("users").doc(uUid).collection(uDisplayName + "Recipes").where("tag", "array-contains", tag_search) // find documents by name
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
