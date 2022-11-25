@@ -47,9 +47,12 @@
 
     <!-- the body of your page goes here -->
     <div class="container">
-        <br>
-        <h1>Add New Schedule <span id="AddNewSchedule"></span></h1>
-        <br>
+        <div class="heading-new-schedule">
+            <button type="button" class="btn btn-outline-secondary" id="backBtn" onclick="schedule.html">Back</button>
+            <span id="AddNewSchedule">
+                <h1>Add Schedule</h1>
+            </span>
+        </div>
         <form>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Please enter the date.</label>
@@ -75,8 +78,9 @@
                     <br>
                 </div>
                 <br>
+
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="Btn btn-lg btn-primary pull-right" a href="schedule.html"
+                    <button type="button" class="Btn btn-lg btn-primary pull-right"
                         onclick="addSchedule()">Submit</button>
                 </div>
         </form>

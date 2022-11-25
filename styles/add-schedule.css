@@ -2,33 +2,50 @@ body {
     background-color: #FEFAE0;
 }
 
-#date{
+.AddNewSchedule {
+    display: inline;
+}
+
+#backBtn {
+    display: inline;
+}
+
+#date {
     background-color: #E9EDC9;
     border-color: #D4A373;
 }
 
-#breakfast{
+#breakfast {
     background-color: #E9EDC9;
     border-color: #D4A373;
 }
 
-#lunch{
+#lunch {
     background-color: #E9EDC9;
     border-color: #D4A373;
 }
 
-#snack{
+#snack {
     background-color: #E9EDC9;
     border-color: #D4A373;
 }
 
-#dinner{
+#dinner {
     background-color: #E9EDC9;
     border-color: #D4A373;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #D4A373;
     border-color: #D4A373;
     border-width: 4px;
+}
+
+.btn-outline-secondary {
+    border-color: #D4A373;
+    text-align: left;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #D4A373;
 }
