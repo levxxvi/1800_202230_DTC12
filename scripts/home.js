@@ -45,27 +45,58 @@ function populateCardsDynamically() {
 
     //     })
 
-    let photonum = 111
-    let card_num = 0
-
     db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(today).get().then((doc) => {
-        console.log(uUid, uDisplayName);
-        console.log(doc.id, " => ", doc.data());
-        $("#todaysMeals").append(
+            console.log(uUid, uDisplayName);
+            console.log(doc.id, " => ", doc.data());
+            $("#todaysMeals").append(
+                `
+            <h2>Breakfast</h2>
+            <button class = "recipe_card" id = "${doc.data().breakfast}">
+                <div class="cards" id="top_card">
+                    <img src="https://picsum.photos/111">
+                    <div id="text_area">
+                        <div id="title_area">
+                            <h1 class="card_title" id="get_title_3">
+                                ${doc.data().breakfast}
+                            </h1>
+                            <hr>
+                        </div>
+
+                        <div id="list_area">
+                            <ul class="lists" id="card_list_1">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </button>
             `
-        <button class = "recipe_card" id = "${doc.data().name}">
+            )
+            // breakfast_meal = doc.data().breakfast
+            // db.collection("users").doc(uUid).collection(uDisplayName + "Recipes").doc(breakfast_meal).get().then((doc) => {
+            //         let list = doc.data().tag
+            //         let list_len = list.length
+            //         for (let i = 0; i < list_len; i++) {
+            //             $(`#card_list_${card_num}`).append('<li class="list_item">' + list[i] + '</li>');
+            //         }
+            //     }
+            ,
+                $("#todaysMeals").append(
+                    `
+                    <h2>Lunch</h2>
+        <button class = "recipe_card" id = "${doc.data().lunch}">
             <div class="cards" id="top_card">
-                <img src="https://picsum.photos/${photonum}">
+                <img src="https://picsum.photos/112">
                 <div id="text_area">
                     <div id="title_area">
                         <h1 class="card_title" id="get_title_3">
-                            ${doc.data().name}
+                            ${doc.data().lunch}
                         </h1>
                         <hr>
                     </div>
 
                     <div id="list_area">
-                        <ul class="lists" id="card_list_${card_num}">
+                        <ul class="lists" id="card_list_2">
 
                         </ul>
                     </div>
@@ -73,15 +104,61 @@ function populateCardsDynamically() {
             </div>
         </button>
         `
-        )
-        photonum += 1
-        let list = doc.data().tag
-        let list_len = list.length
-        for (let i = 0; i < list_len; i++) {
-            $(`#card_list_${card_num}`).append('<li class="list_item">' + list[i] + '</li>');
-        }
+                ), $("#todaysMeals").append(
+                    `
+                    <h2>Snack</h2>
+        <button class = "recipe_card" id = "${doc.data().snack}">
+            <div class="cards" id="top_card">
+                <img src="https://picsum.photos/113">
+                <div id="text_area">
+                    <div id="title_area">
+                        <h1 class="card_title" id="get_title_3">
+                            ${doc.data().snack}
+                        </h1>
+                        <hr>
+                    </div>
 
-    });
-    return null;
-}
-populateCardsDynamically();
+                    <div id="list_area">
+                        <ul class="lists" id="card_list_3">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </button>
+        `
+                ), $("#todaysMeals").append(
+                    `
+                    <h2>Dinner</h2>
+        <button class = "recipe_card" id = "${doc.data().dinner}">
+            <div class="cards" id="top_card">
+                <img src="https://picsum.photos/114">
+                <div id="text_area">
+                    <div id="title_area">
+                        <h1 class="card_title" id="get_title_3">
+                            ${doc.data().dinner}
+                        </h1>
+                        <hr>
+                    </div>
+
+                    <div id="list_area">
+                        <ul class="lists" id="card_list_4">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </button>
+        `
+                )
+                // photonum += 1
+                // let list = doc.data().tag
+                // let list_len = list.length
+                // for (let i = 0; i < list_len; i++) {
+                //     $(`#card_list_${card_num}`).append('<li class="list_item">' + list[i] + '</li>');
+                // }
+
+            });
+        return null;
+    }
+    populateCardsDynamically();
