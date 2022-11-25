@@ -1,7 +1,5 @@
 const tags = []; // tags array
 
-const uUid = localStorage.getItem('userUid')
-const uDisplayName = localStorage.getItem('userDisplayName')
 
 function adder_tag() { // pull tags from html, format them, add them to a array
     let tag = tags.length // format tags
