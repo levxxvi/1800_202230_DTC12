@@ -7,9 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <!-------------------------------------------->
-        <!-- Other libraries and styles of your own -->
-        <!-------------------------------------------->
         <style>
             body {
                 background-color: #FEFAE0;
@@ -33,6 +30,19 @@
                 width: calc(100% / (3 / 2));
                 margin-left: calc(100% / 6);
                 margin-right: calc(100% / 6);
+            }
+
+            #delete {
+                content: "DELETE";
+                margin: 5px;
+                margin-left: 5%;
+                height: 38px;
+                width: 90%;
+                margin-right: 5%;
+                color: #D4A373;
+                background-color: #FAEDCD;
+                border-color: #D4A373;
+                border-radius: 3px;
             }
 
             #recipe_name,
@@ -189,7 +199,7 @@
                 height: 0px;
             }
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 650px) {
                 #finish_cancel {
                     margin-right: 5%;
                 }
@@ -197,35 +207,26 @@
                 #finish_add {
                     margin-left: 5%;
                 }
-
-                .break-column_list {
-                    flex-basis: 100%;
-                    width: 0;
-                    margin-top: 5px;
-                }
             }
 
             @media screen and (max-width: 400px) {
+
                 #finish_buttons {
                     flex-wrap: wrap;
                     display: flex;
                     justify-content: center;
                 }
 
+                #finish_add {
+                    width: 100%;
+                    margin: 0%;
+                    margin-top: 5px;
+                }
+
                 #finish_cancel {
+                    width: 100%;
                     margin: 0%;
                     margin-top: 8px;
-                }
-
-                #finish_add {
-                    margin: 0%;
-                    margin-top: 5px;
-                }
-
-                .break-column_list {
-                    flex-basis: 100%;
-                    width: 0;
-                    margin-top: 5px;
                 }
             }
         </style>
@@ -234,10 +235,13 @@
     <body>
         <div id="center">
             <div id="main_adder" class="fixed-top">
-                <p><span class="required">* required fields</span></p>
+                <div id="delete_buttons">
+                    <button id="delete">DELETE</button>
+                </div>
+                <br>
                 <div class="form-group">
-                    <label for="recipe_name">Enter the recipe's name: &nbsp;&nbsp;<span class="require">*</span></label>
-                    <input type="text" class="form-control" id="recipe_name" placeholder="Recipe Name">
+                    <label for="recipe_name">Recipe name:</label>
+                    <input type="text" class="form-control" id="recipe_name" placeholder="Recipe Name" readonly>
                 </div>
                 <br>
 
@@ -315,10 +319,12 @@
 
 
                 <div id="finish_buttons">
-                    <button id="finish_cancel">CANCEL</button>
-                    <div class="break-column_list"></div>
                     <button id="finish_add">FINISH</button>
+
+                    <button id="finish_cancel">CANCEL</button>
                 </div>
+
+
 
 
             </div>
@@ -329,7 +335,8 @@
         <!---------------------------------------------->
         <!-- Your own JavaScript functions go here    -->
         <!---------------------------------------------->
-        <script src="../scripts/add_to_database.js"></script>
+        <script src="../scripts/skeleton.js"></script>
+        <script src="../scripts/mod-to-database.js"></script>
     </body>
 </div>
 
