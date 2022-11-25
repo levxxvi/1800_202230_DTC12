@@ -1,6 +1,3 @@
-const uUid = localStorage.getItem('userUid')
-const uDisplayName = localStorage.getItem('userDisplayName')
-
 function name_search() {
     $("#search_cards").html("") // take user search
     let photonum = 111
@@ -13,26 +10,26 @@ function name_search() {
             querySnapshot.forEach((doc) => { // find all recipes
                 card_num += 1
                 $("#search_cards").append(`
-    <button class = "recipe_card" id = "${doc.data().name}">
-<div class="cards" id="top_card">
-                <img src="https://picsum.photos/${photonum}">
-                <div id="text_area">
-                    <div id="title_area">
-                        <h1 class="card_title" id="get_title_3">
-                            ${doc.data().name}
-                        </h1>
-                        <hr>
-                    </div>
-                    
-                    <div id="list_area">
-                        <ul class="lists" id="card_list_${card_num}">
+        <button class = "recipe_card" id = "${doc.data().name}">
+    <div class="cards" id="top_card">
+                    <img src="https://picsum.photos/${photonum}">
+                    <div id="text_area">
+                        <div id="title_area">
+                            <h1 class="card_title" id="get_title_3">
+                                ${doc.data().name}
+                            </h1>
+                            <hr>
+                        </div>
 
-                        </ul>
+                        <div id="list_area">
+                            <ul class="lists" id="card_list_${card_num}">
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            </button>
-                    `
+                </button>
+                        `
                 )
                 photonum += 1
                 let list = doc.data().tag
