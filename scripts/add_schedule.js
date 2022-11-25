@@ -1,13 +1,13 @@
     function addSchedule() {
-        console.log("inside add schedule")
+       //inside add schedule
         let Date = document.getElementById("date").value;
         let Breakfast = document.getElementById("breakfast").value;
         let Lunch = document.getElementById("lunch").value;
         let Snack = document.getElementById("snack").value;
         let Dinner = document.getElementById("dinner").value;
-        console.log(Date, Breakfast, Lunch, Snack, Dinner);
     
         firebase.auth().onAuthStateChanged(user => {
+            // if user is signed in
             if (user) {
                 var currentUser = db.collection("users").doc(user.uid)
                 var userID = user.uid;
@@ -29,7 +29,8 @@
                         })
                     })
             } else {
-                // No user is signed in.
+                //error message to tell user they are not signed in 
+                console.log("No user is signed in.")
             }
         });
     }

@@ -51,7 +51,6 @@ function populateCardsDynamically() {
     db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(today).get().then((doc) => {
         console.log(uUid, uDisplayName);
         console.log(doc.id, " => ", doc.data());
-        card_num += 1
         $("#todaysMeals").append(
             `
         <button class = "recipe_card" id = "${doc.data().name}">
