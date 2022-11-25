@@ -1,11 +1,11 @@
 
 function call_add() { // load add card
-    console.log($('#add_recipe').load('../text/add_recipe.html'));
+    console.log($('#add_recipe').load('../text/add-recipe.html'));
 }
 
 function call_modify() { //load mod card
     localStorage.setItem("rec_name", jQuery(this).attr('id'))
-    console.log($('#mod_recipe').load('../text/mod_recipe.html'));
+    console.log($('#mod_recipe').load('../text/mod-recipe.html'));
 }
 
 setup = function () {
