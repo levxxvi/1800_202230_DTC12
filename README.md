@@ -29,31 +29,77 @@ Content of the project folder:
 ├── index.html               # landing HTML file, this is what users see when you come to url
 
 └── README.md                # this readme
+└── README.md		         # this readme
 
-It has the following subfolders and files:
+It has the following sub-folders and files:
 ├── .git                     # Folder for git repo
 
-├── calendar-20              # Contains files for schedule and scrapped calendar
+├── calendar-20		         # Contains files for schedule and scrapped calendar
+    /add_schedule.html       # HTML for our form that adds a new schedule
+    /schedule.html           # HTML for our calendar (schedule page)
+    ├── css
+        ├── bootstrap / mixins
+            /_buttons.css
+            /_grid.css
+            /_resize.css
+        /bootstrap.min.css
+        /bootstrap.min.css.map
+        /owl.carousel.min.css
+        /rome.css
+        /style.css
+    ├── fonts/icomoon
+        ├── demo-files
+            /demo.css
+            /demo.js
+        ├── fonts
+            /icomoon.eot
+            icomoon.svg
+            icomoon.ttf
+            icomoon.woff
+        /demo.html
+        /Read Ne.txt
+        /selection.json
+        /style.css
+    ├── fullcalendar/packages
+        ├── bootstrap
+            
+    ├── js
+    ├── scss
+        ├── bootstrap
+            ├── mixins
+            ├── utilities
+                /_align.scss
+                /_background.scss
+                /_borders.scss
+                /_clearfix.scss
+                /_display.scss
+                /_embed.scss
+                _flex
+            ├── vendor
+        /style.scss
 
 ├── HTML                     # Contains the majority of our html (all but landing page)
+    /grocery.html            # HTML for our grocery page
+    /home.html               # HTML for our home page
+    /recipes.html		     # HTML for our recipes page
 
 ├── images                   # Folder for images
-    /landing-background.jpg  #old background
-    /login_background.jpg    #old background
-    /top-view-delicous-thanksgiving-meal.jpg #current landing background
+    /landing-background.jpg  # current landing background
+    /login_background.jpg	 # old background
+    /top-view-delicious-thanksgiving-meal.jpg # old background
 
 ├── scripts                  # Folder for scripts
     /add-schedule.js         # JS to populate the add recipe feature
     /add-mod-skeleton.js     # JS to populate the modify recipe feature
-    /add-to-databse.js       # JS to add a recipe to the database
+    /add-to-database.js      # JS to add a recipe to the database
     /authentication.js       # JS to authenticate users
     /firebaseAPI_DTC12.js    # JS to connect to firebase
     /grocery-skeleton.js     # JS to populate the grocery page with grocery list
-    /home.js                 # JS to populate the home page
-    /mod-to-databse.js       # JS to modify a recipe in the database
+    /home.js   	 	         # JS to populate the home page
+    /mod-to-database.js	     # JS to modify a recipe in the database
     /recipe-skeleton.js      # JS to populate the recipe page with recipes
     /search-skeleton.js      # JS to populate the search function
-    /skeleton.js             # JS to populate nav and footer
+    /skeleton.js 	         # JS to populate nav and footer
 
 ├── styles                     # Folder for styles
     /AbrilFatface-Regular.ttf  # font style for some headings
