@@ -56,8 +56,17 @@ It has the following subfolders and files:
     /skeleton.js 	     # JS to populate nav and footer
 
 ├── styles                   # Folder for styles
-    /blah.css                # 
+    /AbrilFatface-Regular.ttf  # font style for some headings
+    /add-schedule.css          # CSS for our form that adds a new schedule
+    /grocery.css               # CSS for our grocery page
+    /home.css                  # CSS for our home page
+    /index.css                 # CSS for our log-in page
+    /recipes.css               # CSS for our recipes page
 └── text    
+    /add-recipe.html           # HTML for our add new recipe feature
+    /footer.html               # HTML for our footer
+    /mod-recipe.html           # HTML for modifying recipes
+    /nav.html                  # HTML for our navbar
 
 Firebase hosting files: 
 ├── .firebaserc...
