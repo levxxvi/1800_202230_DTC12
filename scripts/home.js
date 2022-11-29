@@ -20,7 +20,7 @@ function populateCardsDynamically() { //function to populate the cards with info
         querySnapshot.forEach((doc) => {
             // appends the breakfast that user scheduled for today
             $("#todaysMeals").append(
-                    `
+                `
             <h2>Breakfast</h2>
             <button class = "recipe_card" id = "${doc.data().breakfast}">
                 <div class="cards" id="top_card">
@@ -42,7 +42,7 @@ function populateCardsDynamically() { //function to populate the cards with info
                 </div>
             </button>
             `
-                ),
+            ),
                 // appends the lunch that user scheduled for today
                 $("#todaysMeals").append(
                     `
@@ -122,7 +122,10 @@ function populateCardsDynamically() { //function to populate the cards with info
         return null;
     })
     // checks if there are scheduled meals for today, and if not, displays a message to tell users
-    let check = $("#todaysMeals").val()
+    setTimeout(populateBlank, 500)
+}
+function populateBlank() {
+    let check = $("#todaysMeals").html()
     if (check == "") {
         $("#todaysMeals").append(
             `
@@ -150,4 +153,5 @@ function populateCardsDynamically() { //function to populate the cards with info
         )
     }
 }
+
 populateCardsDynamically();
