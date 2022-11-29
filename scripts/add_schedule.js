@@ -23,5 +23,5 @@
 
     setup = function () {
         console.log(uUid, uDisplayName);
-        document.getElementById("submitBtn").addEventListener("click", addSchedule);
+        jQuery("#submitBtn").click(addSchedule);
     }
