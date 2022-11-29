@@ -46,6 +46,10 @@ body {
     border-radius: 3px;
 }
 
+#add_button .material-icons {
+    font-size: 38px;
+}
+
 #search_names {
     float: right;
     padding: 0px;

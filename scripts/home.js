@@ -16,10 +16,9 @@ function populateDate() {
 populateDate();
 
 function populateCardsDynamically() {
-    db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(today).get().then((doc) => {
-        console.log(uUid, uDisplayName);
-        console.log(doc.id, " => ", doc.data());
-        $("#todaysMeals").append(
+    db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").where("date", "==", (today)).get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            $("#todaysMeals").append(
                 `
             <h2>Breakfast</h2>
             <button class = "recipe_card" id = "${doc.data().breakfast}">
@@ -43,8 +42,8 @@ function populateCardsDynamically() {
             </button>
             `
             ),
-            $("#todaysMeals").append(
-                `
+                $("#todaysMeals").append(
+                    `
                     <h2>Lunch</h2>
         <button class = "recipe_card" id = "${doc.data().lunch}">
             <div class="cards" id="top_card">
@@ -66,8 +65,8 @@ function populateCardsDynamically() {
             </div>
         </button>
         `
-            ), $("#todaysMeals").append(
-                `
+                ), $("#todaysMeals").append(
+                    `
                     <h2>Snack</h2>
         <button class = "recipe_card" id = "${doc.data().snack}">
             <div class="cards" id="top_card">
@@ -89,8 +88,8 @@ function populateCardsDynamically() {
             </div>
         </button>
         `
-            ), $("#todaysMeals").append(
-                `
+                ), $("#todaysMeals").append(
+                    `
                     <h2>Dinner</h2>
         <button class = "recipe_card" id = "${doc.data().dinner}">
             <div class="cards" id="top_card">
@@ -112,8 +111,36 @@ function populateCardsDynamically() {
             </div>
         </button>
         `
-            )
-    });
-    return null;
+                )
+        });
+        return null;
+    })
+    let check = $("#todaysMeals").val()
+    if (check == "") {
+        $("#todaysMeals").append(
+            `
+                    <h2>Dinner</h2>
+        <button class = "recipe_card" id = "noSchedule">
+            <div class="cards" id="top_card">
+                <img src="https://picsum.photos/114">
+                <div id="text_area">
+                    <div id="title_area">
+                        <h1 class="card_title" id="get_title_3">
+                            No Schedule for today
+                        </h1>
+                        <hr>
+                    </div>
+
+                    <div id="list_area">
+                        <ul class="lists" id="card_list_4">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </button>
+        `
+        )
+    }
 }
 populateCardsDynamically();
