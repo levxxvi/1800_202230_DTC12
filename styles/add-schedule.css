@@ -41,3 +41,12 @@ body {
 .btn-outline-secondary:hover {
     background-color: #D4A373;
 }
+
+@media screen and (max-width: 500px) {
+    #backBtn {
+        display: block;
+    }
+    #text {
+        margin-left: 40px;
+    }
+}

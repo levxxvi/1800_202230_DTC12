@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Add a New Schedule</title>
+    <title>Add New Schedule</title>
 
     <!------------------------>
     <!-- Required meta tags -->
@@ -46,15 +46,17 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
+    <!-- a form for users to input what they want to eat in a day, with the date specified -->
     <div class="container">
         <br>
         <h1>
             <span class="btn-group">
                 <a href="../HTML/home.html">
-                    <button class="btn btn-outline-secondary" id="backBtn">Back</button>
+                    <!-- redirects users back to home page -->
+                    <button class="btn btn-outline-secondary" id="backBtn">Back</button> 
                 </a>
             </span>
-            Add Schedule
+            <span id="text">Add Schedule</span> 
         </h1>
         <form>
             <div class="form-group">
@@ -81,7 +83,7 @@
                     <br>
                 </div>
                 <br>
-
+                <!-- button to submit information in form and add them to firestore via js -->
                 <div class="d-flex justify-content-end">
                     <button type="button" class="Btn btn-lg btn-primary pull-right" id="submitBtn">Submit</button>
                 </div>

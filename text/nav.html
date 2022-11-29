@@ -1,61 +1,12 @@
 <head>
-    <style>
-        body {
-            font-family: sans-serif;
-            font-size: 1rem;
-        }
-
-        #navbackground {
-            background-color: #FEFAE0;
-        }
-
-        nav {
-            height: 50px;
-        }
-
-        a {
-            display: block;
-        }
-
-        .material-icons.brown {
-            color: #D4A373;
-        }
-
-        .nav-link {
-            color: #D4A373;
-        }
-
-        @media screen and (max-width: 400px) {
-            .text-center {
-                padding-right: 12vw;
-            }
-
-            .nav-link {
-                padding: 0px;
-            }
-
-            a {
-                width: 5vw;
-                padding: 0px;
-            }
-
-            div>a>i {
-                /* vertical-align: 1px; */
-                /* position: relative;
-            top: 1px; */
-                vertical-align: middle;
-            }
-        }
-
-        /* .nav-link {
-            border: #CCD5AE;
-            border-radius: 5px;
-            border-style: solid;
-        } */
-    </style>
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-------------------------------------------->
+    <link rel="stylesheet" href="../styles/nav.css">
 </head>
 
 <body>
+    <!-- bottom navbar with shortcuts to all the main pages of the website -->
     <div class="navbar fixed-bottom justify-content-evenly" id="navbackground">
         <div class="container text-center">
             <a class="nav-link" href="../HTML/home.html">
@@ -76,35 +27,4 @@
             </a>
         </div>
     </div>
-
-    <!-- <nav class="navbar navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="top-navbar-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="nav-link" href="#">
-                        <i class="material-icons md-48">home</i>
-                        <br> Home
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="#">
-                        <i class="material-icons md-48">calendar_month</i>
-                        <br> Schedule
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="grocery.html">
-                        <i class="material-icons md-48">kitchen</i>
-                        <br> Grocery List
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="recipes.html">
-                        <i class="material-icons md-48">flatware</i>
-                        <br> Recipes
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav> -->
 </body>
