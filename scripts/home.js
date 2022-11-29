@@ -121,9 +121,10 @@ function populateCardsDynamically() { //function to populate the cards with info
         });
         return null;
     })
-    // checks if there are scheduled meals for today, and if not, displays a message to tell users
+    // wait 0.5 sec before checking if there are schedule meals, to give time to check from firestore
     setTimeout(populateBlank, 500)
 }
+//check if there are scheduled meals for today, and if not, displays a message to tell users
 function populateBlank() {
     let check = $("#todaysMeals").html()
     if (check == "") {
