@@ -28,34 +28,34 @@ Content of the project folder:
 
 ├── index.html               # landing HTML file, this is what users see when you come to url
 
-└── README.md		     # this readme
+└── README.md                # this readme
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 
-├── calendar-20		     # Contains files for schedule and scrapped calendar
+├── calendar-20              # Contains files for schedule and scrapped calendar
 
-├── HTML		     # Contains the majority of our html (all but landing page)
+├── HTML                     # Contains the majority of our html (all but landing page)
 
 ├── images                   # Folder for images
-    /landing-background.jpg 	#current landing background
-    /login_background.jpg	#old background
-    /top-view-delicous-thanksgiving-meal.jpg #old background
+    /landing-background.jpg  #old background
+    /login_background.jpg    #old background
+    /top-view-delicous-thanksgiving-meal.jpg #current landing background
 
 ├── scripts                  # Folder for scripts
-    /add-schedule.js	     # JS to populate the add recipe feature
+    /add-schedule.js         # JS to populate the add recipe feature
     /add-mod-skeleton.js     # JS to populate the modify recipe feature
     /add-to-databse.js       # JS to add a recipe to the database
     /authentication.js       # JS to authenticate users
     /firebaseAPI_DTC12.js    # JS to connect to firebase
     /grocery-skeleton.js     # JS to populate the grocery page with grocery list
-    /home.js   	 	     # JS to populate the home page
-    /mod-to-databse.js	     # JS to modify a recipe in the database
+    /home.js                 # JS to populate the home page
+    /mod-to-databse.js       # JS to modify a recipe in the database
     /recipe-skeleton.js      # JS to populate the recipe page with recipes
     /search-skeleton.js      # JS to populate the search function
-    /skeleton.js 	     # JS to populate nav and footer
+    /skeleton.js             # JS to populate nav and footer
 
-├── styles                   # Folder for styles
+├── styles                     # Folder for styles
     /AbrilFatface-Regular.ttf  # font style for some headings
     /add-schedule.css          # CSS for our form that adds a new schedule
     /grocery.css               # CSS for our grocery page
