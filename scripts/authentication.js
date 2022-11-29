@@ -25,7 +25,9 @@ var uiConfig = {
           .catch(function (error) {
             console.log("Error adding new user: " + error);
           });
+          //creates a new subcollection for the user's recipes
         db.collection("users").doc(user.uid).collection(user.displayName + "Recipes").doc("Replace this recipe!").set({
+          //create placeholder recipe
           name: "Replace this recipe!",
           breakfast: true,
           lunch: true,
@@ -36,13 +38,16 @@ var uiConfig = {
           description: "You can save the steps here!",
           link: "and link to external websites or videos."
         });
+        //creates a new subcollection for the user's schedule
         db.collection("users").doc(user.uid).collection(user.displayName + "Schedule").doc("2022-11-23").set({
+          //create placeholder schedule
           date: "2022-11-23",
           breakfast: "Pancakes",
           lunch: "Chicken and Fries",
           snack: "Sundae",
           dinner: "Steak",
         });
+        //sets userUid and userDisplayName as a local storage variable
         localStorage.setItem('userUid', user.uid)
         localStorage.setItem('userDisplayName', user.displayName)
         console.log(user.uid);

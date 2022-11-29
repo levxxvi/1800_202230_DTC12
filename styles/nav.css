@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+#navbackground {
+    background-color: #FEFAE0;
+}
+
+nav {
+    height: 50px;
+}
+
+a {
+    display: block;
+}
+
+.material-icons.brown {
+    color: #D4A373;
+}
+
+.nav-link {
+    color: #D4A373;
+}
+
+@media screen and (max-width: 400px) {
+    .text-center {
+        padding-right: 12vw;
+    }
+
+    .nav-link {
+        padding: 0px;
+    }
+
+    a {
+        width: 5vw;
+        padding: 0px;
+    }
+
+    div>a>i {
+        vertical-align: middle;
+    }
+}

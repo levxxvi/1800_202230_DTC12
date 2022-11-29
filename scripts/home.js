@@ -11,13 +11,14 @@ function populateDate() {
     var yyyy = today.getFullYear();
 
     today = yyyy + '-' + mm + '-' + dd;
-    h1.textContent = today;
+    h1.textContent = today; // get the current date and display it
 }
 populateDate();
 
-function populateCardsDynamically() {
+function populateCardsDynamically() { //function to populate the cards with information pulled from firestore
     db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").where("date", "==", (today)).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+            // appends the breakfast that user scheduled for today
             $("#todaysMeals").append(
                 `
             <h2>Breakfast</h2>
@@ -42,6 +43,7 @@ function populateCardsDynamically() {
             </button>
             `
             ),
+            // appends the lunch that user scheduled for today
                 $("#todaysMeals").append(
                     `
                     <h2>Lunch</h2>
@@ -65,7 +67,9 @@ function populateCardsDynamically() {
             </div>
         </button>
         `
-                ), $("#todaysMeals").append(
+                ), 
+                // appends the snack that user scheduled for today
+                $("#todaysMeals").append(
                     `
                     <h2>Snack</h2>
         <button class = "recipe_card" id = "${doc.data().snack}">
@@ -88,7 +92,9 @@ function populateCardsDynamically() {
             </div>
         </button>
         `
-                ), $("#todaysMeals").append(
+                ), 
+                // appends the dinner that user scheduled for today
+                $("#todaysMeals").append(
                     `
                     <h2>Dinner</h2>
         <button class = "recipe_card" id = "${doc.data().dinner}">
@@ -115,6 +121,7 @@ function populateCardsDynamically() {
         });
         return null;
     })
+    // checks if there are scheduled meals for today, and if not, displays a message to tell users
     let check = $("#todaysMeals").val()
     if (check == "") {
         $("#todaysMeals").append(
