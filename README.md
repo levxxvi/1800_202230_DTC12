@@ -24,15 +24,15 @@ Content of the project folder:
 
 ```
  Top level of project folder: 
-├── .firebaserc              # 
+├── .firebaserc              # files created through firebase deploy
 ├── .gitignore               # Git ignore file
-├── 404.html                 #
-├── firebase.json            #
-├── firestore.index.json     #
-├── firestore.rules          #
+├── 404.html                 # files created through firebase deploy
+├── firebase.json            # files created through firebase deploy
+├── firestore.index.json     # files created through firebase deploy
+├── firestore.rules          # files created through firebase deploy
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md                # this readme
-└── storage.rules            # 
+└── storage.rules            # files created through firebase deploy
 
 It has the following sub-folders and files:
 ├── .git                     # Folder for git repo
