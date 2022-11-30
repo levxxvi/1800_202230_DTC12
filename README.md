@@ -337,9 +337,9 @@ It has the following sub-folders and files:
     /recipes.html		     # HTML for our recipes page
 
 ├── images                   # Folder for images
-    /landing-background.jpg  # current landing background
+    /landing-background.jpg  # old background
     /login_background.jpg	 # old background
-    /top-view-delicious-thanksgiving-meal.jpg # old background
+    /top-view-delicious-thanksgiving-meal.jpg # current landing background
 
 ├── scripts                  # Folder for scripts
     /add-schedule.js         # JS to populate the add recipe feature
