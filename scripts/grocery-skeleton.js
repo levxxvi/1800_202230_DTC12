@@ -6,7 +6,14 @@ var snack = ""
 var dinner = ""
 
 function grocerySkeleton() {
-    db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc("2022-11-23").get()
+
+    today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    db.collection("users").doc(uUid).collection(uDisplayName + "Schedule").doc(today).get()
         .then(rec_info => { // pulls all info from database
             breakfast = rec_info.data().breakfast;
             breakfast = breakfast.toLowerCase();
@@ -16,6 +23,7 @@ function grocerySkeleton() {
             snack = snack.toLowerCase();
             dinner = rec_info.data().dinner;
             dinner = dinner.toLowerCase();
+            console.log(breakfast, lunch, snack, dinner)
         })
 }
 
@@ -94,10 +102,10 @@ function groceryDinner() {
 
 setup = function () {
     grocerySkeleton()
-    setTimeout(groceryBreakfast, 600)
-    setTimeout(groceryLunch, 600)
-    setTimeout(grocerySnack, 600)
-    setTimeout(groceryDinner, 600)
+    setTimeout(groceryBreakfast, 500)
+    setTimeout(groceryLunch, 500)
+    setTimeout(grocerySnack, 500)
+    setTimeout(groceryDinner, 500)
 }
 
 $(document).ready(setup)
