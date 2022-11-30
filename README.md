@@ -32,11 +32,11 @@ Content of the project folder:
 ├── firestore.rules          #
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md                # this readme
-└── storage.rules		     # 
+└── storage.rules            # 
 
 It has the following sub-folders and files:
 ├── .git                     # Folder for git repo
-├── calendar-20		         # Contains files for our schedule page and the bootstrap calendar template package we downloaded
+├── calendar-20              # Contains files for our schedule page and the bootstrap calendar template package we downloaded
     /add_schedule.html       # HTML for our form that adds a new schedule
     /schedule.html           # HTML for our calendar (schedule page)
     ├── css
@@ -334,11 +334,11 @@ It has the following sub-folders and files:
 ├── HTML                     # Contains the majority of our html (all but landing page)
     /grocery.html            # HTML for our grocery page
     /home.html               # HTML for our home page
-    /recipes.html		     # HTML for our recipes page
+    /recipes.html            # HTML for our recipes page
 
 ├── images                   # Folder for images
     /landing-background.jpg  # old background
-    /login_background.jpg	 # old background
+    /login_background.jpg    # old background
     /top-view-delicious-thanksgiving-meal.jpg # current landing background
 
 ├── scripts                  # Folder for scripts
@@ -348,11 +348,11 @@ It has the following sub-folders and files:
     /authentication.js       # JS to authenticate users
     /firebaseAPI_DTC12.js    # JS to connect to firebase
     /grocery-skeleton.js     # JS to populate the grocery page with grocery list
-    /home.js   	 	         # JS to populate the home page
-    /mod-to-database.js	     # JS to modify a recipe in the database
+    /home.js                 # JS to populate the home page
+    /mod-to-database.js      # JS to modify a recipe in the database
     /recipe-skeleton.js      # JS to populate the recipe page with recipes
     /search-skeleton.js      # JS to populate the search function
-    /skeleton.js 	         # JS to populate nav and footer
+    /skeleton.js             # JS to populate nav and footer
 
 ├── styles                     # Folder for styles
     /AbrilFatface-Regular.ttf  # font style for some headings
