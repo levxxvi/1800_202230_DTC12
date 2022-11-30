@@ -32,6 +32,9 @@ function call_cancel() { // call the reload function
 
 function call_add() { // add information to database
 
+    let a = jQuery("#recipe_name").val(); // save and format name
+    a = a.toLowerCase()
+    a = a.trim()
 
     let details = jQuery("#details_form").val();   // save user details
 
@@ -95,8 +98,8 @@ function call_add() { // add information to database
         for (i = 0; i < len; i++)
             if (ingred[i] != undefined) { ingred.push(ingred[i]); } // remove empty ingredients
         ingred.splice(0, len);
-        db.collection("users").doc(uUid).collection(uDisplayName + "Recipes").doc(doc_name).set({ // push to firebase
-            name: doc_name,
+        db.collection("users").doc(uUid).collection(uDisplayName + "Recipes").doc(a).set({ // push to firebase
+            name: a,
             breakfast: b,
             lunch: c,
             snack: d,
@@ -106,6 +109,7 @@ function call_add() { // add information to database
             description: details,
             link: f,
         })
+        replace_recipe()
         setTimeout(reload, 500) // call reload function
     }
 }
@@ -168,7 +172,11 @@ function reload() {
     location.reload() // refresh the page
 }
 
-function bring_confirm() { // delete a recipe
+function replace_recipe() { // delete a recipe
+    db.collection("users").doc(uUid).collection(uDisplayName + "Recipes").doc(doc_name).delete()
+}
+
+function delete_recipe() { // delete a recipe
     let check = $("#delete").html();
     console.log(check)
     if (check == "DELETE") { // changes to confirm when clicked
@@ -188,7 +196,7 @@ setup = function () {
     jQuery("#finish_add").click(call_add); // modify recipe
     jQuery("#add_tag").click(adder_tag); // add a tag
     jQuery("#add_ing").click(adder_ing); // add an ingredient
-    jQuery("#delete").click(bring_confirm); // start delete or confirm delete
+    jQuery("#delete").click(delete_recipe); // start delete or confirm delete
     $("body").on("click", ".remove_tag", delete_function_tag); // remove a tag
     $("body").on("click", ".remove_ing", delete_function_ing); // remove an ingredient
 }
