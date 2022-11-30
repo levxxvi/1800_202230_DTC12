@@ -169,14 +169,10 @@ function reload() {
 }
 
 function bring_confirm() { // delete a recipe
-    let check = $("#delete_first").html();
+    let check = $("#delete").html();
     console.log(check)
     if (check == "DELETE") { // changes to confirm when clicked
-        $("#delete_confirm").css("pointer-events", "auto")
-        $("#delete_confirm").css("border-color", "#D4A373")
-        $("#delete_confirm").css("background-color", "#FAEDCD")
-        $("#delete_confirm").css("color", "#D4A373")
-        $("#delete_first").html("CONFIRM")
+        $("#delete").html("CONFIRM")
     }
     if (check == "CONFIRM") { // deletes the recipe
         db.collection("users").doc(uUid).collection(uDisplayName + "Recipes").doc(doc_name).delete()
@@ -192,7 +188,7 @@ setup = function () {
     jQuery("#finish_add").click(call_add); // modify recipe
     jQuery("#add_tag").click(adder_tag); // add a tag
     jQuery("#add_ing").click(adder_ing); // add an ingredient
-    jQuery("#delete_first").click(bring_confirm); // start delete or confirm delete
+    jQuery("#delete").click(bring_confirm); // start delete or confirm delete
     $("body").on("click", ".remove_tag", delete_function_tag); // remove a tag
     $("body").on("click", ".remove_ing", delete_function_ing); // remove an ingredient
 }
