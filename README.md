@@ -2,7 +2,7 @@
 
 ## General Info
 
-This browser based web application to help young adults who are new to cooking for themselves to create a balanced diet.
+This browser based web application aims to help young adults who are new to cooking for themselves create a balanced diet.
 We do this by helping users generate a meal schedule and log their recipes.
 
 * I am Braden and I am exited to practice group projects.
